@@ -10,10 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/Keval-P21/trackr.git"
   },
-  "author": "",
+  "author": "Keval-P21",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Keval-P21/trackr/issues"
   },
-  "homepage": "https://github.com/Keval-P21/trackr#readme"
+  "homepage": "https://github.com/Keval-P21/trackr#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.0",
+    "nodemon": "^2.0.19"
+  }
 }
