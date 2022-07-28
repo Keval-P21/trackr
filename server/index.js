@@ -10,9 +10,9 @@ const SERVER_PORT = process.env.SERVER_PORT;
 app.use(cors());
 app.use(express.json());
 app.use(router);
-app.get('*', (req, res) => {
-  res.status(404).send('Sorry, not found!');
-});
+// app.get('*', (req, res) => {
+//   res.status(404).send('Sorry, not found!');
+// });
 
 main().then(
   app.listen(SERVER_PORT, (err) => {
