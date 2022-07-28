@@ -1,8 +1,9 @@
+//@ts-check
 const JobModel = require('./jobSchema');
 
-const getAll = async function () {
+const getAll = async function (userId) {
   try {
-    return await JobModel.find();
+    return await JobModel.find(userId);
   } catch (error) {
     console.log('Error in getAll:', error);
   }
@@ -10,7 +11,6 @@ const getAll = async function () {
 
 const setOne = async function (job) {
   try {
-    console.log(job);
     return await JobModel.create(job);
   } catch (error) {
     console.log('Error in setOne (create):', error);
@@ -27,7 +27,9 @@ const deleteOne = async function (_id) {
 
 const updateOne = async function (_id, data) {
   try {
-    return await JobModel.findByIdAndUpdate({ _id }, { data });
+    const updatedata = await JobModel.findByIdAndUpdate(_id, data);
+    console.log({ updatedata, _id });
+    return updatedata;
   } catch (error) {
     console.log('Error in updateOne:', error);
   }

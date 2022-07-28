@@ -2,7 +2,7 @@ const jobModel = require('../models/jobModel');
 
 const getJobs = async (req, res) => {
   try {
-    jobs = await jobModel.getAll();
+    jobs = await jobModel.getAll(req.params);
     res.status(200).send(jobs);
   } catch (error) {
     console.log('Error in getJobs', error);
@@ -32,7 +32,7 @@ const deleteJob = async (req, res) => {
 
 const updateJob = async (req, res) => {
   try {
-    await jobModel.updateOne(req.body._id, req.body.data);
+    await jobModel.updateOne(req.params.id, req.body);
     res.status(204).send('Job Updated');
   } catch (error) {
     console.log('Error in updateJob', error);
