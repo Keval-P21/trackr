@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 
-const Navbar = () => {
+function Navbar() {
   return (
-    <nav className='navbar'>
-      <div className='nav'>
-        <Link to='/' className='logo-text'>
+    <nav className='nav-wrapper blue-grey darken-3'>
+      <div className='container'>
+        <Link to='/' className='brand-logo'>
           Trackr
         </Link>
         <SignedInLinks />
@@ -15,6 +15,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;
