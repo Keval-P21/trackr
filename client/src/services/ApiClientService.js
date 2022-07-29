@@ -21,4 +21,18 @@ async function addJob(data) {
   }
 }
 
-module.exports = { getJobs, addJob };
+async function editJob(data) {
+  try {
+    console.log(data._id);
+    const editData = await fetch(`${baseUrl}/${data._id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    return await editData.json();
+  } catch (error) {
+    console.log('PUT request error', error);
+  }
+}
+
+module.exports = { getJobs, addJob, editJob };

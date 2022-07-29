@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ApiClientService from '../../services/ApiClientService';
 
 function CreateJob({ setJobs }) {
-  const [newJob, setNewJob] = useState({});
-  const navigate = useNavigate();
+  // const [newJob, setNewJob] = useState({});
+  let navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -19,21 +19,21 @@ function CreateJob({ setJobs }) {
       interview: '',
       description: event.target.description.value,
       notes: '',
-      color: '',
+      color: 'red',
       date_added: new Date().toDateString(),
     };
 
     await ApiClientService.addJob(data);
     setJobs();
     event.target.reset();
-    // navigate('/');
+    navigate('/');
   }
 
-  function handleChange(event) {
-    setNewJob({
-      [event.target.id]: event.target.value,
-    });
-  }
+  // function handleChange(event) {
+  //   setNewJob({
+  //     [event.target.id]: event.target.value,
+  //   });
+  // }
   return (
     <div className='container'>
       <form className='white' onSubmit={handleSubmit}>
@@ -41,27 +41,27 @@ function CreateJob({ setJobs }) {
         <div className='row'>
           <div className='input-field col s12 m6'>
             <label htmlFor='title'>Job Title *</label>
-            <input type='text' id='title' onChange={handleChange} required />
+            <input type='text' id='title' required />
           </div>
           <div className='input-field col s12 m6'>
             <label htmlFor='company'>Company *</label>
-            <input type='text' id='company' onChange={handleChange} required />
+            <input type='text' id='company' required />
           </div>
           <div className='input-field col s12 m6'>
             <label htmlFor='salary'>Salary</label>
-            <input type='text' id='salary' onChange={handleChange} />
+            <input type='text' id='salary' />
           </div>
           <div className='input-field col s12 m6'>
             <label htmlFor='location'>Location</label>
-            <input type='text' id='location' onChange={handleChange} />
+            <input type='text' id='location' />
           </div>
           <div className='input-field col s12 m6'>
             <label htmlFor='post_url'>URL (Link)</label>
-            <input type='text' id='post_url' onChange={handleChange} />
+            <input type='text' id='post_url' />
           </div>
           <div className='input-field col s12 '>
             <label htmlFor='description'>Description</label>
-            <input type='text' id='description' onChange={handleChange} />
+            <input type='text' id='description' />
           </div>
           <div className='input-field col s12 m6'>
             <select

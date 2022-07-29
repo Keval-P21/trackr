@@ -67,10 +67,6 @@ const jobsSchema = mongoose.Schema({
         required: false,
         default: true,
       },
-      deadline: {
-        type: String,
-        required: false,
-      },
       completed: {
         type: Boolean,
         required: false,

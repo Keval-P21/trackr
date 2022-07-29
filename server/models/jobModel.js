@@ -19,7 +19,7 @@ const setOne = async function (job) {
 
 const deleteOne = async function (_id) {
   try {
-    return await JobModel.deleteOne({ _id });
+    return await JobModel.deleteOne({ _id: _id });
   } catch (error) {
     console.log('Error in deleteOne:', error);
   }
@@ -28,7 +28,6 @@ const deleteOne = async function (_id) {
 const updateOne = async function (_id, data) {
   try {
     const updatedata = await JobModel.findByIdAndUpdate(_id, data);
-    console.log({ updatedata, _id });
     return updatedata;
   } catch (error) {
     console.log('Error in updateOne:', error);

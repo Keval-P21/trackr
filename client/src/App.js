@@ -26,7 +26,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Dashboard jobs={jobs} />} />
-        <Route path='/job/:id' element={<JobDetails />} />
+        <Route
+          path='/job/:id'
+          element={<JobDetails jobs={jobs} setJobs={setJobs} />}
+        />
         <Route path='/createJob' element={<CreateJob setJobs={setJobs} />} />
         <Route path='/signin' element={<SignIn />} />
         <Route path='*' element={<Error />} />
