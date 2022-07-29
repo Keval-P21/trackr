@@ -4,11 +4,10 @@ import JobSummary from './JobSummary';
 function JobList({ jobs }) {
   return (
     <div>
-      <h1>JobList</h1>
-      {jobs.map((job) => {
-        return <JobSummary job={job} key={job._id} />;
+      <h3>JobList</h3>
+      {jobs.map((data) => {
+        return <JobSummary data={data} key={data._id} />;
       })}
-      <JobSummary />
     </div>
   );
 }

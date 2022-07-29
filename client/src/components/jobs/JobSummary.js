@@ -1,10 +1,20 @@
 import React from 'react';
 
-function JobSummary() {
+function JobSummary({ data }) {
+  if (!data) {
+    return <div>Loading</div>;
+  }
+
   return (
-    <div>
-      <h4>Job Title</h4>
-      <h5>Company Name</h5>
+    <div className='row'>
+      <div className='col s12 m5'>
+        <div className={`card-panel ${data.color}`}>
+          <div className='white-text'>
+            <h6>{data.title}</h6>
+            <p>{data.company}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

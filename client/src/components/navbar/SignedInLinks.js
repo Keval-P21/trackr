@@ -6,7 +6,7 @@ function SignedInLinks() {
     <div>
       <ul className='right'>
         <li>
-          <Link to='/'>Add Job</Link>
+          <Link to='/createJob'>Add Job</Link>
         </li>
         <li>
           <Link to='/'>Log Out</Link>

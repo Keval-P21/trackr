@@ -17,7 +17,7 @@ function App() {
 
   async function getUserJobs(userId = 2) {
     let userJobs = await ApiClientService.getJobs(userId);
-    console.log(userJobs);
+    // console.log(userJobs);
     setJobs(userJobs);
   }
 
@@ -27,10 +27,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Dashboard jobs={jobs} />} />
         <Route path='/job/:id' element={<JobDetails />} />
-        <Route
-          path='/job/createJob'
-          element={<CreateJob setJobs={setJobs} />}
-        />
+        <Route path='/createJob' element={<CreateJob setJobs={setJobs} />} />
         <Route path='/signin' element={<SignIn />} />
         <Route path='*' element={<Error />} />
       </Routes>

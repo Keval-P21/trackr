@@ -11,7 +11,7 @@ const jobsSchema = mongoose.Schema({
     required: true,
     default: 'No Job Title',
   },
-  stage: {
+  status: {
     type: String,
     required: true,
     default: 'Pending',
@@ -32,19 +32,7 @@ const jobsSchema = mongoose.Schema({
     type: String,
     required: false,
   },
-  deadline: {
-    type: String,
-    required: false,
-  },
-  applied: {
-    type: String,
-    required: false,
-  },
   interview: {
-    type: String,
-    required: false,
-  },
-  offer: {
     type: String,
     required: false,
   },
@@ -67,33 +55,6 @@ const jobsSchema = mongoose.Schema({
     type: String,
     required: false,
     default: new Date().toDateString(),
-  },
-  company_info: {
-    title: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    description: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    website: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    country: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    industry: {
-      type: String,
-      required: false,
-      default: '',
-    },
   },
   todos: [
     {

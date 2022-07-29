@@ -19,6 +19,7 @@ function SignIn() {
       password: event.target.password.value,
     };
     console.log(signInData);
+    console.log(credentials);
   }
 
   return (
