@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function JobSummary({ data }) {
   return data ? (
     // <div className='row'>
-    <div className='col s12 m5'>
+    <div className='col s12 m4'>
       <div className={`card-panel ${data.color}`}>
         <div className='white-text'>
           <h6>{data.title}</h6>

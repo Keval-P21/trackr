@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import ApiClientService from '../../services/ApiClientService';
+import TodoSingle from '../todos/TodoSingle';
 
 function JobDetails({ jobs, setJobs }) {
   const [isDisabled, setIsDisabled] = useState(true);
@@ -44,6 +45,26 @@ function JobDetails({ jobs, setJobs }) {
       return [...prevState.filter((el) => el._id !== newJobId), newJob];
     });
     event.target.reset();
+  }
+  async function deleteTodo(id) {
+    // const todoData = data[0];
+    const todoData = data[0].todos;
+    console.log('todo Data', todoData, id);
+    const filteredTodo = todoData.filter((el) => el._id === id)[0];
+    filteredTodo.active = false;
+    console.log('FilteredTodo Active Change', filteredTodo);
+    const updatedTodos = {
+      ...data[0],
+      todos: todoData,
+    };
+
+    console.log(updatedTodos);
+    const newJob = await ApiClientService.editJob(updatedTodos);
+    setJobs((prevState) => {
+      const newJobId = newJob._id;
+      return [...prevState.filter((el) => el._id !== newJobId), newJob];
+    });
+    // event.target.reset();
   }
 
   async function handleSave() {
@@ -180,9 +201,13 @@ function JobDetails({ jobs, setJobs }) {
           />
           <button type='submit'>+</button>
         </form>
-        {data[0].todos.map((task) => {
-          return <p key={task._id}>{task.content}</p>;
-        })}
+        {data[0].todos
+          .filter((task) => task.active)
+          .map((task) => {
+            return (
+              <TodoSingle task={task} key={task._id} deleteTodo={deleteTodo} />
+            );
+          })}
       </div>
     </div>
   ) : (
