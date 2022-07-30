@@ -1,22 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function JobSummary({ data }) {
+function JobSummary({ data, color }) {
   return data ? (
-    // <div className='row'>
-    <div className='col s12 m4'>
-      <div className={`card-panel ${data.color}`}>
-        <div className='white-text'>
-          <h6>{data.title}</h6>
-          <p>{data.company}</p>
-          <Link to={`/job/${data._id}`} className='btn'>
-            Details
-          </Link>
-        </div>
+    <div className={`card card-panel ${color}`}>
+      <h5>{data.title}</h5>
+      <p>{data.company}</p>
+      <div className='pad-top'>
+        <Link to={`/job/${data._id}`} className='btn-detail'>
+          Details
+        </Link>
       </div>
     </div>
   ) : (
-    // </div>
     <div>Loading</div>
   );
 }

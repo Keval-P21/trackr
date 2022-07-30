@@ -1,29 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SignedInLinks from './SignedInLinks';
-import SignedOutLinks from './SignedOutLinks';
 
 function Navbar() {
   return (
-    <nav className='nav-wrapper blue-grey darken-3'>
-      <div className='container'>
-        <Link to='/' className='brand-logo'>
+    <nav>
+      <div className='nav-list'>
+        <Link to='/' className='nav-item'>
           Trackr
         </Link>
-        <div className='menu right'>
-          {/* <SignedInLinks />
-          <SignedOutLinks /> */}
-          <Link to='/'>Dashboard</Link>
-          <Link to='/tasks'>Tasks</Link>
-          <Link to='/createJob'>Add Job</Link>
-          <Link to='/calendar'>Calendar</Link>
-        </div>
-        {/* <button className='hamburger'>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button> */}
+        <Link to='/' className='nav-item'>
+          Dashboard
+        </Link>
+        <Link to='/tasks' className='nav-item'>
+          {/* <div className='nav-icon'>
+            <span class='material-icons md-18'>format_list_bulleted</span> */}
+          Tasks
+          {/* </div> */}
+        </Link>
+        <Link to='/createJob' className='nav-item'>
+          Add Job
+        </Link>
+        <Link to='/calendar' className='nav-item'>
+          Calendar
+        </Link>
       </div>
     </nav>
   );

@@ -3,7 +3,7 @@ import JobTasks from './JobTasks';
 
 function Tasks({ jobs }) {
   return jobs ? (
-    <div className='container'>
+    <div className=''>
       <h4>Tasks</h4>
       <div>
         {jobs.map((data) => (

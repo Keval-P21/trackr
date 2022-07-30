@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import SignIn from './components/auth/SignIn';
 import Dashboard from './components/dashboard/Dashboard';
 import Error from './components/dashboard/Error';
 import CreateJob from './components/jobs/CreateJob';
@@ -19,25 +18,31 @@ function App() {
 
   async function getUserJobs(userId = 2) {
     let userJobs = await ApiClientService.getJobs(userId);
-    // console.log(userJobs);
     setJobs(userJobs);
   }
 
   return (
     <div className='App'>
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Dashboard jobs={jobs} />} />
-        <Route
-          path='/job/:id'
-          element={<JobDetails jobs={jobs} setJobs={setJobs} />}
-        />
-        <Route path='/createJob' element={<CreateJob setJobs={setJobs} />} />
-        <Route path='/tasks' element={<Tasks jobs={jobs} />} />
-        <Route path='/signin' element={<SignIn />} />
-        <Route path='/calendar' element={<Calendar />} />
-        <Route path='*' element={<Error />} />
-      </Routes>
+      <div className='container'>
+        <Routes>
+          <Route path='/' element={<Dashboard jobs={jobs} />} />
+          <Route
+            path='/job/:id'
+            element={
+              <JobDetails
+                jobs={jobs}
+                setJobs={setJobs}
+                getUserJobs={getUserJobs}
+              />
+            }
+          />
+          <Route path='/createJob' element={<CreateJob setJobs={setJobs} />} />
+          <Route path='/tasks' element={<Tasks jobs={jobs} />} />
+          <Route path='/calendar' element={<Calendar />} />
+          <Route path='*' element={<Error />} />
+        </Routes>
+      </div>
     </div>
   );
 }

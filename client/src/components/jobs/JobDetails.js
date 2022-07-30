@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import ApiClientService from '../../services/ApiClientService';
 import TodoSingle from '../todos/TodoSingle';
 
-function JobDetails({ jobs, setJobs }) {
+function JobDetails({ jobs, setJobs, getUserJobs }) {
   const [isDisabled, setIsDisabled] = useState(true);
   const jobId = useParams();
   const titleRef = useRef(null);
@@ -44,6 +44,7 @@ function JobDetails({ jobs, setJobs }) {
       const newJobId = newJob._id;
       return [...prevState.filter((el) => el._id !== newJobId), newJob];
     });
+    getUserJobs(2);
     event.target.reset();
   }
   async function deleteTodo(id) {
@@ -64,7 +65,7 @@ function JobDetails({ jobs, setJobs }) {
       const newJobId = newJob._id;
       return [...prevState.filter((el) => el._id !== newJobId), newJob];
     });
-    // event.target.reset();
+    getUserJobs(2);
   }
 
   async function handleSave() {
@@ -80,7 +81,6 @@ function JobDetails({ jobs, setJobs }) {
       interview: '',
       description: descriptionRef.current.value,
       notes: '',
-      color: data[0].color,
     };
 
     const newJob = await ApiClientService.editJob(editedData);
@@ -88,6 +88,7 @@ function JobDetails({ jobs, setJobs }) {
       const newJobId = newJob._id;
       return [...prevState.filter((el) => el._id !== newJobId), newJob];
     });
+    getUserJobs(2);
     setIsDisabled((current) => !current);
   }
 

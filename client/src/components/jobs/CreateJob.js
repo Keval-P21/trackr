@@ -24,7 +24,7 @@ function CreateJob({ setJobs }) {
     };
 
     await ApiClientService.addJob(data);
-    setJobs();
+    setJobs((prev) => [...prev, data]);
     event.target.reset();
     navigate('/');
   }

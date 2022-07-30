@@ -1,0 +1,86 @@
+.card-container{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+   -ms-overflow-style: -ms-autohiding-scrollbar; 
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  padding: 30px;
+  border-radius: var(--radius);
+  position: relative;
+  transition: .3s all;
+  box-shadow: 0 2px 5px 0 rgba(3,6,26,0.15);
+  box-sizing: border-box;
+   
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card h5{
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.card p{
+  margin-bottom: 1rem;
+}
+
+.btn-detail{
+  justify-self: flex-end;
+  left: 2rem;
+  bottom: 1.5rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: white;
+  background: rgba(0,0,0,.2);
+  padding: 10px 20px;
+  border-radius: 10000px;
+  transition: .3s all;
+}
+.btn-detail:hover{
+  background: rgba(255,255,255,.8);
+  color: #2e2e2e
+}
+
+.pad-top{
+  padding-top: 1rem;
+}
+
+
+
+.card-lime {
+  background: #99B898;
+  color: white;
+}
+
+.card-blue {
+  background: #355C7D;
+  color: white;
+}
+
+.card-red {
+  background: #E84A5F;
+  color: white;
+}
+
+.card-purple {
+  background: #6C5B7B;
+  color: white;
+}
+
+.card-orange {
+  background: #DC8665;
+  color: white;
+}
+
+.card-yellow{
+  background: #EEB462;
+  color: white;
+}

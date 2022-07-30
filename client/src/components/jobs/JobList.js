@@ -1,14 +1,18 @@
 import React from 'react';
 import JobSummary from './JobSummary';
 
-function JobList({ jobs }) {
-  return jobs && jobs.length ? (
-    <div className='col s12'>
-      <h4>JobList</h4>
-      {jobs.map((data) => {
-        return <JobSummary data={data} key={data._id} />;
-      })}
-    </div>
+function JobList({ jobs, section, color }) {
+  return jobs && jobs.length && section ? (
+    <>
+      <h4>{section}</h4>
+      <div className='card-container'>
+        {jobs
+          .filter((job) => job.status === section.toLowerCase())
+          .map((data) => {
+            return <JobSummary data={data} key={data._id} color={color} />;
+          })}
+      </div>
+    </>
   ) : (
     <div>Loading</div>
   );
