@@ -16,6 +16,7 @@ function Navbar() {
           <Link to='/'>Dashboard</Link>
           <Link to='/tasks'>Tasks</Link>
           <Link to='/createJob'>Add Job</Link>
+          <Link to='/calendar'>Calendar</Link>
         </div>
         {/* <button className='hamburger'>
           <span></span>

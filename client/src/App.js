@@ -7,6 +7,7 @@ import CreateJob from './components/jobs/CreateJob';
 import JobDetails from './components/jobs/JobDetails';
 import Navbar from './components/navbar/Navbar';
 import Tasks from './components/todos/Tasks';
+import Calendar from './components/calendar/Calendar';
 import ApiClientService from './services/ApiClientService';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path='/createJob' element={<CreateJob setJobs={setJobs} />} />
         <Route path='/tasks' element={<Tasks jobs={jobs} />} />
         <Route path='/signin' element={<SignIn />} />
+        <Route path='/calendar' element={<Calendar />} />
         <Route path='*' element={<Error />} />
       </Routes>
     </div>
