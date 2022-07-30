@@ -10,8 +10,19 @@ function Navbar() {
         <Link to='/' className='brand-logo'>
           Trackr
         </Link>
-        <SignedInLinks />
-        <SignedOutLinks />
+        <div className='menu right'>
+          {/* <SignedInLinks />
+          <SignedOutLinks /> */}
+          <Link to='/'>Dashboard</Link>
+          <Link to='/tasks'>Tasks</Link>
+          <Link to='/createJob'>Add Job</Link>
+        </div>
+        {/* <button className='hamburger'>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button> */}
       </div>
     </nav>
   );

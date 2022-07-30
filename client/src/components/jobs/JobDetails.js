@@ -38,7 +38,7 @@ function JobDetails({ jobs, setJobs }) {
         },
       ],
     };
-    console.log(todoData);
+    // console.log(todoData);
     const newJob = await ApiClientService.editJob(todoData);
     setJobs((prevState) => {
       const newJobId = newJob._id;
@@ -49,16 +49,16 @@ function JobDetails({ jobs, setJobs }) {
   async function deleteTodo(id) {
     // const todoData = data[0];
     const todoData = data[0].todos;
-    console.log('todo Data', todoData, id);
+    // console.log('todo Data', todoData, id);
     const filteredTodo = todoData.filter((el) => el._id === id)[0];
     filteredTodo.active = false;
-    console.log('FilteredTodo Active Change', filteredTodo);
+    // console.log('FilteredTodo Active Change', filteredTodo);
     const updatedTodos = {
       ...data[0],
       todos: todoData,
     };
 
-    console.log(updatedTodos);
+    // console.log(updatedTodos);
     const newJob = await ApiClientService.editJob(updatedTodos);
     setJobs((prevState) => {
       const newJobId = newJob._id;
