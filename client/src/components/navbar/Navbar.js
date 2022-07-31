@@ -20,9 +20,9 @@ function Navbar() {
         <Link to='/createJob' className='nav-item'>
           Add Job
         </Link>
-        <Link to='/calendar' className='nav-item'>
+        {/* <Link to='/calendar' className='nav-item'>
           Calendar
-        </Link>
+        </Link> */}
       </div>
     </nav>
   );

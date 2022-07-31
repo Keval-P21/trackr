@@ -4,6 +4,7 @@ import App from './App';
 import './styles/index.css';
 import './styles/navbar.css';
 import './styles/card.css';
+import './styles/formfields.css';
 import { BrowserRouter } from 'react-router-dom';
 
 const container = document.getElementById('root');

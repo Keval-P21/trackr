@@ -1,27 +1,35 @@
-body {
-  background:var(--clr-gray100);  
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-:root {
-  --primary:  #6aeeb5;
-  --primary-hover: #29e6a7;
-  --clr-gray100: #f0f7f8;
-  --clr-gray200: #cfd8dc;
-  --light: #EEEEEE;
-  --dark: #212121;
-
-  --radius: 0.2rem;
-}
-
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
 }
+
+body {
+  background:var(--clr-gray100);  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --radius: 0.4rem;
+
+  --primary:  #6aeeb5;
+  --primary-hover: #29e6a7;
+  --clr-gray100: #f0f7f8;
+  --clr-gray200: #cfd8dc;
+  --light: #EEEEEE;
+  --dark: #212121;
+  
+  --lime: #99B898;
+  --blue:#355C7D;
+  --red: #D26466;
+  --purple: #6C5B7B;
+  --orange:#DC8665;
+  --yellow:#EEB462;
+}
+
+
 
 .container {
   margin-left: 3rem;

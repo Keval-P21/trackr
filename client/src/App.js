@@ -26,7 +26,10 @@ function App() {
       <Navbar />
       <div className='container'>
         <Routes>
-          <Route path='/' element={<Dashboard jobs={jobs} />} />
+          <Route
+            path='/'
+            element={<Dashboard jobs={jobs} getUserJobs={getUserJobs} />}
+          />
           <Route
             path='/job/:id'
             element={

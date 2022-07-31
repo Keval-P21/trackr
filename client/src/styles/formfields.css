@@ -1,0 +1,48 @@
+input[type="text"]:disabled {
+  background: none;
+  border: none;
+  color: black;
+  padding-top: 1rem;
+}
+
+/* .edit-cont{
+  background: var(--blue);
+  color: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+} */
+.form-box {
+  width: 100%;
+  max-width: 800px;
+  padding: 30px 15px;
+  border-radius: var(--radius);
+  background-color: var(--lime);
+}
+.c-form-label {
+  display: inline-block;
+  margin: .5rem 0;
+  color: white;
+  letter-spacing: .2px;
+  font-size: 1rem;
+}
+.c-form-input {
+  width: 100%;
+  padding: 15px 10px;
+  border: 1px solid #3d3935;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #3d3935;
+  outline: 0;
+}
+fieldset {
+  margin: .4rem 0;
+  padding: 0;
+  border: none;
+}

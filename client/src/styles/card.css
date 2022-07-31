@@ -32,7 +32,7 @@
   margin-bottom: 1rem;
 }
 
-.btn-detail{
+.btn{
   justify-self: flex-end;
   left: 2rem;
   bottom: 1.5rem;
@@ -43,10 +43,44 @@
   padding: 10px 20px;
   border-radius: 10000px;
   transition: .3s all;
+  cursor: pointer;
 }
 .btn-detail:hover{
   background: rgba(255,255,255,.8);
   color: #2e2e2e
+}
+
+.btn-close{
+  cursor: pointer;
+  align-self: flex-end;  
+  text-decoration: none;
+  color: white;
+  background: none;
+  border: none;
+  border-radius: 10000px;
+  transition: .3s all;
+}
+.btn-close:hover{
+  color: #2e2e2e
+}
+
+.btn-confirm{
+  border: none;
+  margin-right: 0.4rem;
+  background: rgba(110, 223, 3, 0.8);
+  color: #2e2e2e
+}
+.btn-confirm:hover{
+  color: white;
+}
+.btn-cancel{
+  border: none;
+  margin-right: 0.4rem;
+  background: rgba(223, 3, 3, 0.8);
+  color: #2e2e2e
+}
+.btn-cancel:hover{
+  color: white;
 }
 
 .pad-top{
@@ -66,7 +100,7 @@
 }
 
 .card-red {
-  background: #E84A5F;
+  background: #D26466;
   color: white;
 }
 

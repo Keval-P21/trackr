@@ -23,7 +23,7 @@ async function addJob(data) {
 
 async function editJob(data) {
   try {
-    console.log(data._id);
+    // console.log(data._id);
     const editData = await fetch(`${baseUrl}/${data._id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -35,4 +35,15 @@ async function editJob(data) {
   }
 }
 
-module.exports = { getJobs, addJob, editJob };
+async function deleteJob(id) {
+  try {
+    await fetch(`${baseUrl}/${id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    console.log('DELETE request error', error);
+  }
+}
+
+module.exports = { getJobs, addJob, editJob, deleteJob };

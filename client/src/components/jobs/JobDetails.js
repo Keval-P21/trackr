@@ -93,104 +93,110 @@ function JobDetails({ jobs, setJobs, getUserJobs }) {
   }
 
   return jobs && data.length ? (
-    <div className='container'>
-      <div>
+    <div>
+      <div className='edit-cont'>
         <div>JobDetails</div>
-
-        {/* <form className='white'> */}
-        <div className='input-field col s12 m6'>
-          {/* <label htmlFor='title'>Company *</label> */}
-          <input
-            type='text'
-            id='title'
-            defaultValue={data[0].title}
-            disabled={isDisabled}
-            ref={titleRef}
-            required
-          />
+        <div className='form-box'>
+          {/* <form className='white'> */}
+          <div>
+            <fieldset>
+              <label htmlFor='title' className='c-form-label'>
+                Job Title* :
+              </label>
+              <input
+                type='text'
+                id='title'
+                className='c-form-input'
+                defaultValue={data[0].title}
+                disabled={isDisabled}
+                ref={titleRef}
+                required
+              />
+            </fieldset>
+          </div>
+          <div className='input-field col s12 m6'>
+            <label htmlFor='company'>Company* :</label>
+            <input
+              type='text'
+              id='company'
+              defaultValue={data[0].company}
+              disabled={isDisabled}
+              ref={companyRef}
+              required
+            />
+          </div>
+          <div className='input-field col s12 m6'>
+            <label htmlFor='salary'>Salary</label>
+            <input
+              type='text'
+              id='salary'
+              defaultValue={data[0].salary ? data[0].salary : ''}
+              disabled={isDisabled}
+              ref={salaryRef}
+            />
+          </div>
+          <div className='input-field col s12 m6'>
+            <label htmlFor='location'>Location</label>
+            <input
+              type='text'
+              id='location'
+              defaultValue={data[0].location ? data[0].location : ''}
+              disabled={isDisabled}
+              ref={locationRef}
+            />
+          </div>
+          <div className='input-field col s12 m6'>
+            <label htmlFor='post_url'>URL (Link)</label>
+            <input
+              type='text'
+              id='post_url'
+              defaultValue={data[0].post_url ? data[0].post_url : ''}
+              disabled={isDisabled}
+              ref={post_urlRef}
+            />
+          </div>
+          <div className='input-field col s12 '>
+            <label htmlFor='description'>Description</label>
+            <input
+              type='text'
+              id='description'
+              defaultValue={data[0].description ? data[0].description : ''}
+              disabled={isDisabled}
+              ref={descriptionRef}
+            />
+          </div>
+          <div className='input-field col s12 m6'>
+            <select
+              className='browser-default'
+              id='status'
+              defaultValue={`${data[0].status}`}
+              disabled={isDisabled}
+              required
+              ref={statusRef}
+            >
+              <option value='' disabled>
+                Application Status *
+              </option>
+              <option value='pending'>Pending</option>
+              <option value='applied'>Applied</option>
+              <option value='phone'>Phone</option>
+              <option value='onsite'>Onsite</option>
+              <option value='offer'>Offer</option>
+              <option value='rejected'>Rejected</option>
+            </select>
+          </div>
+          {isDisabled ? (
+            <>
+              <button onClick={handleClick}>Edit</button>
+            </>
+          ) : (
+            <>
+              <button onClick={refresh}>Cancel</button>
+              <button onClick={handleSave}>Save</button>
+            </>
+          )}
+          {/* </form> */}
         </div>
-        <div className='input-field col s12 m6'>
-          {/* <label htmlFor='company'>Company *</label> */}
-          <input
-            type='text'
-            id='company'
-            defaultValue={data[0].company}
-            disabled={isDisabled}
-            ref={companyRef}
-            required
-          />
-        </div>
-        <div className='input-field col s12 m6'>
-          <label htmlFor='salary'>Salary</label>
-          <input
-            type='text'
-            id='salary'
-            defaultValue={data[0].salary ? data[0].salary : ''}
-            disabled={isDisabled}
-            ref={salaryRef}
-          />
-        </div>
-        <div className='input-field col s12 m6'>
-          <label htmlFor='location'>Location</label>
-          <input
-            type='text'
-            id='location'
-            defaultValue={data[0].location ? data[0].location : ''}
-            disabled={isDisabled}
-            ref={locationRef}
-          />
-        </div>
-        <div className='input-field col s12 m6'>
-          <label htmlFor='post_url'>URL (Link)</label>
-          <input
-            type='text'
-            id='post_url'
-            defaultValue={data[0].post_url ? data[0].post_url : ''}
-            disabled={isDisabled}
-            ref={post_urlRef}
-          />
-        </div>
-        <div className='input-field col s12 '>
-          <label htmlFor='description'>Description</label>
-          <input
-            type='text'
-            id='description'
-            defaultValue={data[0].description ? data[0].description : ''}
-            disabled={isDisabled}
-            ref={descriptionRef}
-          />
-        </div>
-        <div className='input-field col s12 m6'>
-          <select
-            className='browser-default'
-            id='status'
-            defaultValue={`${data[0].status}`}
-            disabled={isDisabled}
-            required
-            ref={statusRef}
-          >
-            <option value='' disabled>
-              Application Status *
-            </option>
-            <option value='pending'>Pending</option>
-            <option value='applied'>Applied</option>
-            <option value='phone'>Phone</option>
-            <option value='onsite'>Onsite</option>
-            <option value='offer'>Offer</option>
-            <option value='rejected'>Rejected</option>
-          </select>
-        </div>
-        {isDisabled ? (
-          <>
-            <button onClick={handleClick}>Edit</button>
-          </>
-        ) : (
-          <>
-            <button onClick={refresh}>Cancel</button>
-            <button onClick={handleSave}>Save</button>
-          </>
-        )}
-        {/* </form> */}
       </div>
       <div>
         <form onSubmit={submitTodo}>
