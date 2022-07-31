@@ -44,6 +44,8 @@
   border-radius: 10000px;
   transition: .3s all;
   cursor: pointer;
+  border: none;
+  margin-right: 1rem;
 }
 .btn-detail:hover{
   background: rgba(255,255,255,.8);

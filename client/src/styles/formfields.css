@@ -1,23 +1,14 @@
-input[type="text"]:disabled {
-  background: none;
-  border: none;
+input:disabled {
+  background: rgba(255,255,255,0.4);
+
   color: black;
-  padding-top: 1rem;
 }
 
-/* .edit-cont{
-  background: var(--blue);
-  color: white;
-  padding: 2rem;
-  border-radius: var(--radius);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: auto;
-  min-height: 600px;
-} */
+select:disabled{
+  background: rgba(255,255,255,0.4);
+  color: black;
+}
+
 .form-box {
   width: 100%;
   max-width: 800px;
@@ -25,21 +16,22 @@ input[type="text"]:disabled {
   border-radius: var(--radius);
   background-color: var(--lime);
 }
-.c-form-label {
+.form-label {
   display: inline-block;
   margin: .5rem 0;
   color: white;
   letter-spacing: .2px;
   font-size: 1rem;
 }
-.c-form-input {
+.form-input {
   width: 100%;
   padding: 15px 10px;
-  border: 1px solid #3d3935;
+  border: 1px solid var(--clr-gray200);
   border-radius: 4px;
-  background-color: #fff;
+  background: rgba(255,255,255,0.4);
   color: #3d3935;
   outline: 0;
+  font-size: 1.2rem;
 }
 fieldset {
   margin: .4rem 0;

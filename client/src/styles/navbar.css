@@ -1,9 +1,9 @@
 .nav-list{
-  background-color: white;
-  box-shadow: 0 0 10px var(--clr-gray200);
+  background-color: var(--dark);
+  box-shadow: 0 0 10px var(--dark);
   margin: 0;
   padding: 1rem 0;
-  border-radius: var(--radius);
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -13,11 +13,11 @@
   list-style: none;
   margin-right: 2rem;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .nav-item:hover{
-  color: var(--primary-hover);
+  color: var(--red);
 }
 
 .nav-item:first-child{
