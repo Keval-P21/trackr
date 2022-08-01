@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import ApiClientService from '../../services/ApiClientService';
 
 function CreateJob({ setJobs }) {
-  // const [newJob, setNewJob] = useState({});
   let navigate = useNavigate();
 
   async function handleSubmit(event) {
@@ -29,11 +28,6 @@ function CreateJob({ setJobs }) {
     navigate('/');
   }
 
-  // function handleChange(event) {
-  //   setNewJob({
-  //     [event.target.id]: event.target.value,
-  //   });
-  // }
   return (
     <div className='container'>
       <form className='white' onSubmit={handleSubmit}>

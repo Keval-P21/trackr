@@ -1,10 +1,19 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import ApiClientService from '../../services/ApiClientService';
+import AddEventForm from '../events/AddEventForm';
+import EventsItem from '../events/EventsItem';
 import TodoSingle from '../todos/TodoSingle';
 import JobInfo from './JobInfo';
 
-function JobDetails({ jobs, setJobs, getUserJobs }) {
+function JobDetails({
+  jobs,
+  setJobs,
+  getUserJobs,
+  events,
+  setEvents,
+  getUserEvents,
+}) {
   const jobId = useParams();
   const todoRef = useRef(null);
 
@@ -49,10 +58,32 @@ function JobDetails({ jobs, setJobs, getUserJobs }) {
   }
 
   return jobs && data.length ? (
-    <div>
-      <div className='edit-cont'>
+    <div className='job-det-cont'>
+      <div>
         <div>JobDetails</div>
         <JobInfo jobs={jobs} setJobs={setJobs} getUserJobs={getUserJobs} />
+      </div>
+      <div>
+        <div>
+          <AddEventForm
+            events={events}
+            getUserEvents={getUserEvents}
+            setEvents={setEvents}
+          />
+        </div>
+        <div>
+          <h5>Upcoming Events</h5>
+          {events
+            .filter((el) => el.jobId === jobId.id)
+            .map((event) => (
+              <EventsItem
+                key={event._id}
+                event={event}
+                getUserEvents={getUserEvents}
+                setEvents={setEvents}
+              />
+            ))}
+        </div>
       </div>
       <div>
         <form onSubmit={submitTodo}>

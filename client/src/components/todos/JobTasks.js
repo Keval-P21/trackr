@@ -3,7 +3,6 @@ import TodoSingle from './TodoSingle';
 import { Link } from 'react-router-dom';
 
 function JobTasks({ data }) {
-  // console.log(data);
   return (
     <div>
       <div>

@@ -9,6 +9,11 @@ select:disabled{
   color: black;
 }
 
+.job-det-cont{
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .form-box {
   width: 100%;
   max-width: 800px;

@@ -1,8 +1,8 @@
-let baseUrl = 'http://localhost:3001/jobs';
+let baseUrl = 'http://localhost:3001';
 
 async function getJobs(userId) {
   try {
-    let jobs = await fetch(`${baseUrl}/${userId}`);
+    let jobs = await fetch(`${baseUrl}/jobs/${userId}`);
     return jobs.json();
   } catch (error) {
     console.log('GET request error', error);
@@ -11,7 +11,7 @@ async function getJobs(userId) {
 
 async function addJob(data) {
   try {
-    await fetch(`${baseUrl}/${data.userId}`, {
+    await fetch(`${baseUrl}/jobs/${data.userId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -23,8 +23,7 @@ async function addJob(data) {
 
 async function editJob(data) {
   try {
-    // console.log(data._id);
-    const editData = await fetch(`${baseUrl}/${data._id}`, {
+    const editData = await fetch(`${baseUrl}/jobs/${data._id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -37,7 +36,7 @@ async function editJob(data) {
 
 async function deleteJob(id) {
   try {
-    await fetch(`${baseUrl}/${id}`, {
+    await fetch(`${baseUrl}/jobs/${id}`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
     });
@@ -46,4 +45,25 @@ async function deleteJob(id) {
   }
 }
 
-module.exports = { getJobs, addJob, editJob, deleteJob };
+async function getEvents() {
+  try {
+    let events = await fetch(`${baseUrl}/events`);
+    return events.json();
+  } catch (error) {
+    console.log('GET request error', error);
+  }
+}
+
+async function addEvent(data) {
+  try {
+    await fetch(`${baseUrl}/events/${data.jobId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+  } catch (error) {
+    console.log('POST request error', error);
+  }
+}
+
+module.exports = { getJobs, addJob, editJob, deleteJob, getEvents, addEvent };

@@ -35,7 +35,6 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
       location: locationRef.current.value,
       salary: salaryRef.current.value,
       post_url: post_urlRef.current.value,
-      interview: '',
       description: descriptionRef.current.value,
       notes: '',
     };

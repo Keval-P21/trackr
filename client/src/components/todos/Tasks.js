@@ -6,9 +6,11 @@ function Tasks({ jobs }) {
     <div className=''>
       <h4>Tasks</h4>
       <div>
-        {jobs.map((data) => (
-          <JobTasks data={data} key={data._id} />
-        ))}
+        {jobs
+          .filter((data) => data.todos.length > 0)
+          .map((data) => (
+            <JobTasks data={data} key={data._id} />
+          ))}
       </div>
     </div>
   ) : (

@@ -12,17 +12,11 @@ function Navbar() {
           Dashboard
         </Link>
         <Link to='/tasks' className='nav-item'>
-          {/* <div className='nav-icon'>
-            <span class='material-icons md-18'>format_list_bulleted</span> */}
           Tasks
-          {/* </div> */}
         </Link>
         <Link to='/createJob' className='nav-item'>
           Add Job
         </Link>
-        {/* <Link to='/calendar' className='nav-item'>
-          Calendar
-        </Link> */}
       </div>
     </nav>
   );
