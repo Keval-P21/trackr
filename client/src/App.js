@@ -10,17 +10,19 @@ import Navbar from './components/navbar/Navbar';
 import PrivateRoute from './components/privateroutes/PrivateRoute';
 import Tasks from './components/todos/Tasks';
 import ApiClientService from './services/ApiClientService';
+import { useAuth } from './components/context/AuthContext';
 
 function App() {
   const [jobs, setJobs] = useState([]);
   const [events, setEvents] = useState([]);
+  const { currentUser } = useAuth();
 
   useEffect(() => {
-    getUserJobs();
+    getUserJobs(currentUser.uid);
     getUserEvents();
   }, []);
 
-  async function getUserJobs(userId = 2) {
+  async function getUserJobs(userId) {
     const userJobs = await ApiClientService.getJobs(userId);
     setJobs(userJobs);
   }

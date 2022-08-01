@@ -5,6 +5,7 @@ import AddEventForm from '../events/AddEventForm';
 import EventsItem from '../events/EventsItem';
 import TodoSingle from '../todos/TodoSingle';
 import JobInfo from './JobInfo';
+import { useAuth } from '../context/AuthContext';
 
 function JobDetails({
   jobs,
@@ -16,6 +17,7 @@ function JobDetails({
 }) {
   const jobId = useParams();
   const todoRef = useRef(null);
+  const { currentUser } = useAuth();
 
   if (!jobs) return <div>Loading</div>;
 
@@ -37,7 +39,7 @@ function JobDetails({
       const newJobId = newJob._id;
       return [...prevState.filter((el) => el._id !== newJobId), newJob];
     });
-    getUserJobs(2);
+    getUserJobs(currentUser.uid);
     event.target.reset();
   }
   async function deleteTodo(id) {
@@ -54,7 +56,7 @@ function JobDetails({
       const newJobId = newJob._id;
       return [...prevState.filter((el) => el._id !== newJobId), newJob];
     });
-    getUserJobs(2);
+    getUserJobs(currentUser.uid);
   }
 
   return jobs && data.length ? (

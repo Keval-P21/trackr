@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ApiClientService from '../../services/ApiClientService';
+import { useAuth } from '../context/AuthContext';
 
 function JobSummary({ data, getUserJobs }) {
+  const { currentUser } = useAuth();
   const [del, setDel] = useState(false);
   function toggleDelete() {
     setDel((current) => !current);
@@ -10,7 +12,7 @@ function JobSummary({ data, getUserJobs }) {
 
   async function confirmDelete(id) {
     await ApiClientService.deleteJob(id);
-    getUserJobs(2);
+    getUserJobs(currentUser.uid);
   }
 
   return data ? (

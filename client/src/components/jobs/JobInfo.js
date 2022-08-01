@@ -1,8 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import ApiClientService from '../../services/ApiClientService';
+import { useAuth } from '../context/AuthContext';
 
 function JobInfo({ jobs, setJobs, getUserJobs }) {
+  const { currentUser } = useAuth();
+
   const [isDisabled, setIsDisabled] = useState(true);
   const jobId = useParams();
   const titleRef = useRef(null);
@@ -41,7 +44,6 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
       company: companyRef.current.value,
       title: titleRef.current.value,
       status: statusRef.current.value,
-      userId: '2',
       location: locationRef.current.value,
       salary: salaryRef.current.value,
       post_url: post_urlRef.current.value,
@@ -55,7 +57,7 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
       const newJobId = newJob._id;
       return [...prevState.filter((el) => el._id !== newJobId), newJob];
     });
-    getUserJobs(2);
+    getUserJobs(currentUser.uid);
     setIsDisabled((current) => !current);
   }
   return jobs && data.length ? (

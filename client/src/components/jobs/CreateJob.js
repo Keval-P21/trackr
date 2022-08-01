@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ApiClientService from '../../services/ApiClientService';
+import { useAuth } from '../context/AuthContext';
 
 function CreateJob({ setJobs }) {
   const navigate = useNavigate();
+  const { currentUser } = useAuth();
 
   const sections = {
     pending: 'lime',
@@ -20,7 +22,7 @@ function CreateJob({ setJobs }) {
       company: event.target.company.value,
       title: event.target.title.value,
       status: event.target.status.value,
-      userId: '2',
+      userId: currentUser.uid,
       location: event.target.location.value,
       salary: event.target.salary.value,
       post_url: event.target.post_url.value,
