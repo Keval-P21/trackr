@@ -1,13 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 function Navbar() {
-  return (
+  const { currentUser, logout } = useAuth();
+  const [error, setError] = useState();
+  const navigate = useNavigate();
+
+  async function handleLogOut() {
+    setError('');
+    try {
+      await logout();
+      navigate('/login');
+    } catch (error) {
+      setError('Failed to Logout');
+    }
+  }
+  return currentUser ? (
     <nav>
       <div className='nav-list'>
         <Link to='/' className='nav-item'>
           Trackr
         </Link>
+
         <Link to='/' className='nav-item'>
           Dashboard
         </Link>
@@ -16,6 +31,17 @@ function Navbar() {
         </Link>
         <Link to='/createJob' className='nav-item'>
           Add Job
+        </Link>
+        <button className='btn-logout' onClick={handleLogOut}>
+          Logout
+        </button>
+      </div>
+    </nav>
+  ) : (
+    <nav>
+      <div className='nav-list'>
+        <Link to='/' className='nav-item'>
+          Trackr
         </Link>
       </div>
     </nav>

@@ -88,13 +88,7 @@ function CreateJob({ setJobs }) {
           <label htmlFor='status' className='form-label'>
             Application Status
           </label>
-          <select
-            className='browser-default'
-            id='status'
-            className='form-input'
-            defaultValue={''}
-            required
-          >
+          <select id='status' className='form-label' defaultValue={''} required>
             <option value='' disabled>
               Application Status *
             </option>
@@ -107,7 +101,6 @@ function CreateJob({ setJobs }) {
           </select>
         </fieldset>
 
-        <div className='row'></div>
         <div className='input-field'>
           <button className='btn' type='submit'>
             Add Job

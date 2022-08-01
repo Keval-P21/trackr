@@ -6,12 +6,15 @@ import './styles/navbar.css';
 import './styles/card.css';
 import './styles/formfields.css';
 import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './components/context/AuthContext';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <AuthProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </AuthProvider>
 );

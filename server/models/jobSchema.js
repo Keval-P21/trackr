@@ -32,10 +32,6 @@ const jobsSchema = mongoose.Schema({
     type: String,
     required: false,
   },
-  interview: {
-    type: String,
-    required: false,
-  },
   description: {
     type: String,
     required: false,
@@ -46,15 +42,14 @@ const jobsSchema = mongoose.Schema({
     required: false,
     default: '',
   },
-  color: {
-    type: String,
-    required: false,
-    default: 'blue',
-  },
   date_added: {
     type: String,
     required: false,
     default: new Date().toDateString(),
+  },
+  color: {
+    type: String,
+    required: false,
   },
   todos: [
     {
