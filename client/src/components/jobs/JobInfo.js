@@ -86,7 +86,7 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
           <select
             id='status'
             className='form-input'
-            defaultValue={`${data[0].status}`}
+            defaultValue={data[0].status}
             disabled={isDisabled}
             required
             ref={statusRef}

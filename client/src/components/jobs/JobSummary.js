@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ApiClientService from '../../services/ApiClientService';
 
-function JobSummary({ data, color, getUserJobs }) {
+function JobSummary({ data, getUserJobs }) {
   const [del, setDel] = useState(false);
   function toggleDelete() {
     setDel((current) => !current);
@@ -14,7 +14,7 @@ function JobSummary({ data, color, getUserJobs }) {
   }
 
   return data ? (
-    <div className={`card card-panel ${color}`}>
+    <div className={`card card-panel ${data.color}`}>
       {del ? (
         <>
           <h5>Are you sure?</h5>

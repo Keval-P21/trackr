@@ -18,6 +18,7 @@
   transition: .3s all;
   box-shadow: 0 2px 5px 0 rgba(3,6,26,0.15);
   box-sizing: border-box;
+  color: white;
    
 }
 .card:hover {
@@ -49,7 +50,8 @@
 }
 .btn-detail:hover{
   background: rgba(255,255,255,.8);
-  color: #2e2e2e
+  transform: scale(1.05);
+  color: #2e2e2e;
 }
 
 .btn-close{
@@ -63,26 +65,30 @@
   transition: .3s all;
 }
 .btn-close:hover{
-  color: #2e2e2e
+  color: #2e2e2e;
+  transform: scale(1.05);
 }
 
 .btn-confirm{
   border: none;
   margin-right: 0.4rem;
   background: rgba(110, 223, 3, 0.8);
-  color: #2e2e2e
-}
-.btn-confirm:hover{
   color: white;
 }
+
+.btn-confirm:hover{
+  transform: scale(1.05);
+}
+
 .btn-cancel{
   border: none;
   margin-right: 0.4rem;
   background: rgba(223, 3, 3, 0.8);
-  color: #2e2e2e
-}
-.btn-cancel:hover{
   color: white;
+}
+
+.btn-cancel:hover{
+  transform: scale(1.05);
 }
 
 .pad-top{
@@ -91,32 +97,3 @@
 
 
 
-.card-lime {
-  background: #99B898;
-  color: white;
-}
-
-.card-blue {
-  background: #355C7D;
-  color: white;
-}
-
-.card-red {
-  background: #D26466;
-  color: white;
-}
-
-.card-purple {
-  background: #6C5B7B;
-  color: white;
-}
-
-.card-orange {
-  background: #DC8665;
-  color: white;
-}
-
-.card-yellow{
-  background: #EEB462;
-  color: white;
-}

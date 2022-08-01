@@ -18,12 +18,12 @@ function App() {
   }, []);
 
   async function getUserJobs(userId = 2) {
-    let userJobs = await ApiClientService.getJobs(userId);
+    const userJobs = await ApiClientService.getJobs(userId);
     setJobs(userJobs);
   }
 
   async function getUserEvents() {
-    let userEvents = await ApiClientService.getEvents();
+    const userEvents = await ApiClientService.getEvents();
     setEvents(userEvents);
   }
   return (

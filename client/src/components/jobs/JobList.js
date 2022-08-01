@@ -1,7 +1,7 @@
 import React from 'react';
 import JobSummary from './JobSummary';
 
-function JobList({ jobs, section, color, getUserJobs }) {
+function JobList({ jobs, section, getUserJobs }) {
   return jobs && jobs.length && section ? (
     <>
       <h4>{section}</h4>
@@ -13,7 +13,6 @@ function JobList({ jobs, section, color, getUserJobs }) {
               <JobSummary
                 data={data}
                 key={data._id}
-                color={color}
                 getUserJobs={getUserJobs}
               />
             );

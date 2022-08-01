@@ -3,7 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import ApiClientService from '../../services/ApiClientService';
 
 function CreateJob({ setJobs }) {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const sections = {
+    pending: 'lime',
+    applied: 'yellow',
+    phone: 'blue',
+    onsite: 'orange',
+    offer: 'purple',
+    rejected: 'red',
+  };
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -15,10 +24,9 @@ function CreateJob({ setJobs }) {
       location: event.target.location.value,
       salary: event.target.salary.value,
       post_url: event.target.post_url.value,
-      interview: '',
       description: event.target.description.value,
       notes: '',
-      color: 'red',
+      color: sections[event.target.status.value],
       date_added: new Date().toDateString(),
     };
 

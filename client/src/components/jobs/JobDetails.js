@@ -57,6 +57,15 @@ function JobDetails({
     getUserJobs(2);
   }
 
+  const sections = [
+    { title: 'Pending', color: 'lime' },
+    { title: 'Applied', color: 'yellow' },
+    { title: 'Phone', color: 'blue' },
+    { title: 'Onsite', color: 'orange' },
+    { title: 'Offer', color: 'purple' },
+    { title: 'Rejected', color: 'red' },
+  ];
+
   return jobs && data.length ? (
     <div className='job-det-cont'>
       <div>

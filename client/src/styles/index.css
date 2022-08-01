@@ -30,6 +30,29 @@ body {
   --yellow:#EEB462;
 }
 
+.lime {
+  background: #99B898;
+}
+
+.blue {
+  background: #355C7D;
+}
+
+.red {
+  background: #D26466;
+}
+
+.purple {
+  background: #6C5B7B;
+}
+
+.orange {
+  background: #DC8665;
+}
+
+.yellow{
+  background: #EEB462;
+}
 
 
 .container {
