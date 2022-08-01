@@ -68,49 +68,69 @@ function JobDetails({
 
   return jobs && data.length ? (
     <div className='job-det-cont'>
-      <div>
-        <div>JobDetails</div>
-        <JobInfo jobs={jobs} setJobs={setJobs} getUserJobs={getUserJobs} />
+      <div className={`section-cont ${data[0].color}`}>
+        <JobInfo
+          jobs={jobs}
+          setJobs={setJobs}
+          getUserJobs={getUserJobs}
+          className={data[0].color}
+        />
       </div>
       <div>
         <div>
-          <AddEventForm
-            events={events}
-            getUserEvents={getUserEvents}
-            setEvents={setEvents}
-          />
+          <div className={`section-cont ${data[0].color}`}>
+            <AddEventForm
+              events={events}
+              getUserEvents={getUserEvents}
+              setEvents={setEvents}
+            />
+          </div>
+          <div className={`section-cont ${data[0].color}`}>
+            <h5>Upcoming Events</h5>
+            {events
+              .filter((el) => el.jobId === jobId.id)
+              .map((event) => (
+                <EventsItem
+                  key={event._id}
+                  event={event}
+                  getUserEvents={getUserEvents}
+                  setEvents={setEvents}
+                />
+              ))}
+          </div>
         </div>
-        <div>
-          <h5>Upcoming Events</h5>
-          {events
-            .filter((el) => el.jobId === jobId.id)
-            .map((event) => (
-              <EventsItem
-                key={event._id}
-                event={event}
-                getUserEvents={getUserEvents}
-                setEvents={setEvents}
+        <div className={`section-cont form-box ${data[0].color}`}>
+          <h2 className='white-text slim'>Tasks</h2>
+          <form onSubmit={submitTodo}>
+            <fieldset>
+              <label htmlFor='title' className='form-label'>
+                Add Task
+              </label>
+              <input
+                type='text'
+                placeholder='Enter as task...'
+                ref={todoRef}
+                className='form-input'
+                required
               />
-            ))}
+
+              <button type='submit' className='btn'>
+                +
+              </button>
+            </fieldset>
+          </form>
+          {data[0].todos
+            .filter((task) => task.active)
+            .map((task) => {
+              return (
+                <TodoSingle
+                  task={task}
+                  key={task._id}
+                  deleteTodo={deleteTodo}
+                />
+              );
+            })}
         </div>
-      </div>
-      <div>
-        <form onSubmit={submitTodo}>
-          <input
-            type='text'
-            placeholder='Enter as task...'
-            ref={todoRef}
-            required
-          />
-          <button type='submit'>+</button>
-        </form>
-        {data[0].todos
-          .filter((task) => task.active)
-          .map((task) => {
-            return (
-              <TodoSingle task={task} key={task._id} deleteTodo={deleteTodo} />
-            );
-          })}
       </div>
     </div>
   ) : (

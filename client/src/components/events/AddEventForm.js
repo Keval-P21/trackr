@@ -1,6 +1,5 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-
 import ApiClientService from '../../services/ApiClientService';
 
 function AddEventForm({ setEvents, events, getUserEvents }) {
@@ -12,42 +11,7 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
   const [startTime, setStartTime] = useState();
   const [endTime, setEndTime] = useState();
   const jobId = useParams();
-  // const nameEventRef = useRef(null);
-  // const decriptionEventRef = useRef(null);
-  // const startDateEventRef = useRef(null);
-  // const endDateEventRef = useRef(null);
-  // // const startTimeEventRef = useRef(null);
-  // // const endTimeEventRef = useRef(null);
-  // const locationEventRef = useRef(null);
 
-  function submitEvent(e) {
-    e.preventDefault();
-    // atcb_action({
-    //   name: String(nameEventRef),
-    //   description: String(decriptionEventRef),
-    //   startDate: '2022-10-14',
-    //   endDate: '2022-10-18',
-    //   options: [
-    //     'Apple',
-    //     'Google',
-    //     'iCal',
-    //     'Microsoft365',
-    //     'Outlook.com',
-    //     'Yahoo',
-    //   ],
-    //   iCalFileName: 'Reminder-Event',
-    // });
-    console.log({
-      jobId,
-      name,
-      description,
-      startDate,
-      endDate,
-      startTime,
-      endTime,
-      location,
-    });
-  }
   async function handleSubmit(event) {
     event.preventDefault();
     const data = {
@@ -87,82 +51,80 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
   const minStartDate = new Date().toISOString().slice(0, 16);
 
   return (
-    <>
-      {/* <form onSubmit={(e) => submitEvent(e)}> */}
-      <div className='form-box'>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <fieldset>
-            <label className='form-label' htmlFor='name'>
-              Event Title
-            </label>
-            <input
-              id='name'
-              placeholder='Event title...'
-              // ref={nameEventRef}
-              onChange={handleNameChange}
-              className='form-input'
-              required
-            />
-          </fieldset>
-          <fieldset>
-            <label className='form-label' htmlFor='decription'>
-              Description
-            </label>
-            <input
-              id='description'
-              placeholder='Decription...'
-              className='form-input'
-              // ref={decriptionEventRef}
-              onChange={handleDescriptionChange}
-              required
-            />
-          </fieldset>
-          <fieldset>
-            <label className='form-label' htmlFor='location'>
-              Location
-            </label>
+    <div className='form-box'>
+      <h2 className='white-text slim'>Add Event</h2>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <fieldset>
+          <label className='form-label' htmlFor='name'>
+            Event Title
+          </label>
+          <input
+            id='name'
+            placeholder='Event title...'
+            // ref={nameEventRef}
+            onChange={handleNameChange}
+            className='form-input'
+            required
+          />
+        </fieldset>
+        <fieldset>
+          <label className='form-label' htmlFor='decription'>
+            Description
+          </label>
+          <input
+            id='description'
+            placeholder='Decription...'
+            className='form-input'
+            // ref={decriptionEventRef}
+            onChange={handleDescriptionChange}
+            required
+          />
+        </fieldset>
+        <fieldset>
+          <label className='form-label' htmlFor='location'>
+            Location
+          </label>
 
-            <input
-              id='location'
-              placeholder='Location...'
-              className='form-input'
-              // ref={locationEventRef}
-              onChange={handleLocationChange}
-              required
-            />
-          </fieldset>
-          <fieldset>
-            <label className='form-label' htmlFor='startDateTime'>
-              Start Date & Time
-            </label>
-            <input
-              id='startDateTime'
-              type='datetime-local'
-              className='form-input'
-              // ref={startDateEventRef}
-              min={minStartDate}
-              onChange={handleStartDateChange}
-              required
-            />
-          </fieldset>
-          <fieldset>
-            <label className='form-label' htmlFor='endDateTime'>
-              End Date & Time
-            </label>
-            <input
-              id='endDateTime'
-              type='datetime-local'
-              className='form-input'
-              // ref={endDateEventRef}
-              onChange={handleEndDateChange}
-              min={startDate ? `${startDate}T${startTime}` : minStartDate}
-              required
-            />
-          </fieldset>
-          <input type='submit' value='Save' className='btn' />
-        </form>
-      </div>
-    </>
+          <input
+            id='location'
+            placeholder='Location...'
+            className='form-input'
+            // ref={locationEventRef}
+            onChange={handleLocationChange}
+            required
+          />
+        </fieldset>
+        <fieldset>
+          <label className='form-label' htmlFor='startDateTime'>
+            Start Date & Time
+          </label>
+          <input
+            id='startDateTime'
+            type='datetime-local'
+            className='form-input'
+            // ref={startDateEventRef}
+            min={minStartDate}
+            onChange={handleStartDateChange}
+            required
+          />
+        </fieldset>
+        <fieldset>
+          <label className='form-label' htmlFor='endDateTime'>
+            End Date & Time
+          </label>
+          <input
+            id='endDateTime'
+            type='datetime-local'
+            className='form-input'
+            // ref={endDateEventRef}
+            onChange={handleEndDateChange}
+            min={startDate ? `${startDate}T${startTime}` : minStartDate}
+            required
+          />
+        </fieldset>
+        <input type='submit' value='Save' className='btn' />
+      </form>
+    </div>
   );
 }
 

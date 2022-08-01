@@ -37,53 +37,76 @@ function CreateJob({ setJobs }) {
   }
 
   return (
-    <div className='container'>
-      <form className='white' onSubmit={handleSubmit}>
-        <h5 className='grey-text text-darken-4'>Add New Job</h5>
-        <div className='row'>
-          <div className='input-field col s12 m6'>
-            <label htmlFor='title'>Job Title *</label>
-            <input type='text' id='title' required />
-          </div>
-          <div className='input-field col s12 m6'>
-            <label htmlFor='company'>Company *</label>
-            <input type='text' id='company' required />
-          </div>
-          <div className='input-field col s12 m6'>
-            <label htmlFor='salary'>Salary</label>
-            <input type='text' id='salary' />
-          </div>
-          <div className='input-field col s12 m6'>
-            <label htmlFor='location'>Location</label>
-            <input type='text' id='location' />
-          </div>
-          <div className='input-field col s12 m6'>
-            <label htmlFor='post_url'>URL (Link)</label>
-            <input type='text' id='post_url' />
-          </div>
-          <div className='input-field col s12 '>
-            <label htmlFor='description'>Description</label>
-            <input type='text' id='description' />
-          </div>
-          <div className='input-field col s12 m6'>
-            <select
-              className='browser-default'
-              id='status'
-              defaultValue={''}
-              required
-            >
-              <option value='' disabled>
-                Application Status *
-              </option>
-              <option value='pending'>Pending</option>
-              <option value='applied'>Applied</option>
-              <option value='phone'>Phone</option>
-              <option value='onsite'>Onsite</option>
-              <option value='offer'>Offer</option>
-              <option value='rejected'>Rejected</option>
-            </select>
-          </div>
-        </div>
+    <div className='create-cont purple pad-around'>
+      {/* <div className='form-cont'> */}
+      <form className='form-cont' onSubmit={handleSubmit}>
+        <h5 className='white-text'>Add New Job</h5>
+
+        <fieldset>
+          <label htmlFor='title' className='form-label'>
+            Job Title *
+          </label>
+          <input type='text' id='title' className='form-input' required />
+        </fieldset>
+
+        <fieldset>
+          <label htmlFor='company' className='form-label'>
+            Company *
+          </label>
+          <input type='text' id='company' className='form-input' required />
+        </fieldset>
+
+        <fieldset>
+          <label htmlFor='salary' className='form-label'>
+            Salary
+          </label>
+          <input type='text' id='salary' className='form-input' />
+        </fieldset>
+
+        <fieldset>
+          <label htmlFor='location' className='form-label'>
+            Location
+          </label>
+          <input type='text' id='location' className='form-input' />
+        </fieldset>
+
+        <fieldset>
+          <label htmlFor='post_url' className='form-label'>
+            URL (Link)
+          </label>
+          <input type='text' id='post_url' className='form-input' />
+        </fieldset>
+
+        <fieldset>
+          <label htmlFor='description' className='form-label'>
+            Description
+          </label>
+          <input type='text' id='description' className='form-input' />
+        </fieldset>
+
+        <fieldset>
+          <label htmlFor='status' className='form-label'>
+            Application Status
+          </label>
+          <select
+            className='browser-default'
+            id='status'
+            className='form-input'
+            defaultValue={''}
+            required
+          >
+            <option value='' disabled>
+              Application Status *
+            </option>
+            <option value='pending'>Pending</option>
+            <option value='applied'>Applied</option>
+            <option value='phone'>Phone</option>
+            <option value='onsite'>Onsite</option>
+            <option value='offer'>Offer</option>
+            <option value='rejected'>Rejected</option>
+          </select>
+        </fieldset>
+
         <div className='row'></div>
         <div className='input-field'>
           <button className='btn' type='submit'>
@@ -91,6 +114,7 @@ function CreateJob({ setJobs }) {
           </button>
         </div>
       </form>
+      {/* </div> */}
     </div>
   );
 }

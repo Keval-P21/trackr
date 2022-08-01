@@ -54,6 +54,13 @@ body {
   background: #EEB462;
 }
 
+.white-text{
+  color: white;
+}
+
+.slim{
+  font-weight: 400;
+}
 
 .container {
   margin-left: 3rem;
@@ -63,6 +70,10 @@ body {
   flex-direction: column;
 }
 
+.section-cont{
+  border-radius: var(--radius);
+  width: 50%;
+}
 
 
 .material-icons {

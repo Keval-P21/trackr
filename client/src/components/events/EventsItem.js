@@ -1,5 +1,4 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { atcb_action } from 'add-to-calendar-button';
 import 'add-to-calendar-button/assets/css/atcb.css';
 
@@ -24,15 +23,6 @@ function EventsItem({ event }) {
       ],
       iCalFileName: 'Reminder-Event',
     });
-    // console.log({
-    //   name: event.name,
-    //   description: event.description,
-    //   startDate: event.startDate,
-    //   endDate: event.endDate,
-    //   startTime: event.startTime,
-    //   endTime: event.endTime,
-    //   location: event.location,
-    // });
   }
   return event ? (
     <div>

@@ -11,7 +11,7 @@ select:disabled{
 
 .job-det-cont{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .form-box {
@@ -19,7 +19,6 @@ select:disabled{
   max-width: 800px;
   padding: 30px 15px;
   border-radius: var(--radius);
-  background-color: var(--lime);
 }
 .form-label {
   display: inline-block;
@@ -42,4 +41,16 @@ fieldset {
   margin: .4rem 0;
   padding: 0;
   border: none;
+}
+
+.pad-around{
+  padding: 2rem;
+}
+
+.create-cont{
+  justify-self: center;
+  border-radius: var(--radius);
+  max-width: 800px;
+  margin-left:auto;
+  margin-right: auto;
 }

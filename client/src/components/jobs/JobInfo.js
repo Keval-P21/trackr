@@ -12,8 +12,18 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
   const post_urlRef = useRef(null);
   const descriptionRef = useRef(null);
   const statusRef = useRef(null);
+  const notesRef = useRef(null);
 
   if (!jobs) return <div>Loading</div>;
+
+  const sections = {
+    pending: 'lime',
+    applied: 'yellow',
+    phone: 'blue',
+    onsite: 'orange',
+    offer: 'purple',
+    rejected: 'red',
+  };
 
   const data = jobs.filter((job) => job._id === jobId.id);
 
@@ -36,7 +46,8 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
       salary: salaryRef.current.value,
       post_url: post_urlRef.current.value,
       description: descriptionRef.current.value,
-      notes: '',
+      notes: notesRef.current.value,
+      color: sections[statusRef.current.value],
     };
 
     const newJob = await ApiClientService.editJob(editedData);
@@ -50,6 +61,7 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
   return jobs && data.length ? (
     <>
       <div className='form-box'>
+        <h2 className='white-text slim'>Job Details</h2>
         <fieldset>
           <label htmlFor='title' className='form-label'>
             Job Title *
@@ -110,7 +122,7 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
             type='text'
             id='salary'
             className='form-input'
-            defaultValue={data[0].salary ? data[0].salary : ''}
+            defaultValue={data[0].salary ?? ''}
             disabled={isDisabled}
             ref={salaryRef}
           />
@@ -124,7 +136,7 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
             type='text'
             id='location'
             className='form-input'
-            defaultValue={data[0].location ? data[0].location : ''}
+            defaultValue={data[0].location ?? ''}
             disabled={isDisabled}
             ref={locationRef}
           />
@@ -137,7 +149,7 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
             type='text'
             id='post_url'
             className='form-input'
-            defaultValue={data[0].post_url ? data[0].post_url : ''}
+            defaultValue={data[0].post_url ?? ''}
             disabled={isDisabled}
             ref={post_urlRef}
           />
@@ -150,9 +162,22 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
             type='text'
             id='description'
             className='form-input'
-            defaultValue={data[0].description ? data[0].description : ''}
+            defaultValue={data[0].description ?? ''}
             disabled={isDisabled}
             ref={descriptionRef}
+          />
+        </fieldset>
+        <fieldset>
+          <label htmlFor='notes' className='form-label'>
+            Notes
+          </label>
+          <input
+            type='text'
+            id='notes'
+            className='form-input'
+            defaultValue={data[0].notes ?? ''}
+            disabled={isDisabled}
+            ref={notesRef}
           />
         </fieldset>
 
