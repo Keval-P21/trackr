@@ -1,18 +1,19 @@
 import React from 'react';
 import { atcb_action } from 'add-to-calendar-button';
 import 'add-to-calendar-button/assets/css/atcb.css';
+import ApiClientService from '../../services/ApiClientService';
 
-function EventsItem({ event }) {
+function EventsItem({ singleEvent, getUserEvents }) {
   function submitEvent(e) {
     e.preventDefault();
     atcb_action({
-      name: event.name,
-      description: event.description,
-      startDate: event.startDate,
-      endDate: event.endDate,
-      startTime: event.startTime,
-      endTime: event.endTime,
-      location: event.location,
+      name: singleEvent.name,
+      description: singleEvent.description,
+      startDate: singleEvent.startDate,
+      endDate: singleEvent.endDate,
+      startTime: singleEvent.startTime,
+      endTime: singleEvent.endTime,
+      location: singleEvent.location,
       options: [
         'Apple',
         'Google',
@@ -24,10 +25,20 @@ function EventsItem({ event }) {
       iCalFileName: 'Reminder-Event',
     });
   }
-  return event ? (
+
+  // console.log(singleEvent);
+
+  async function deleteEvent(id) {
+    console.log(id);
+    // await ApiClientService.deleteEvent(id);
+    // getUserEvents();
+  }
+
+  return singleEvent ? (
     <div>
-      <p>{event.name}</p>
+      <p>{singleEvent.name}</p>
       <button onClick={submitEvent}>Add to calendar</button>
+      <button oncClick={() => deleteEvent(singleEvent._id)}>Delete</button>
     </div>
   ) : (
     <div>Loading...</div>

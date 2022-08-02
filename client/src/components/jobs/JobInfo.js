@@ -62,7 +62,7 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
   }
   return jobs && data.length ? (
     <>
-      <div className='form-box'>
+      <div>
         <h2 className='white-text slim'>Job Details</h2>
         <fieldset>
           <label htmlFor='title' className='form-label'>

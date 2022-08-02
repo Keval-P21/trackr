@@ -59,38 +59,18 @@ function JobDetails({
     getUserJobs(currentUser.uid);
   }
 
+  const filteredEvents = events.filter((el) => el.jobId === jobId.id);
+
   return jobs && data.length ? (
     <div className='job-det-cont'>
-      <div className={`section-cont ${data[0].color}`}>
-        <JobInfo
-          jobs={jobs}
-          setJobs={setJobs}
-          getUserJobs={getUserJobs}
-          className={data[0].color}
-        />
-      </div>
-      <div>
-        <div>
-          <div className={`section-cont ${data[0].color}`}>
-            <AddEventForm
-              events={events}
-              getUserEvents={getUserEvents}
-              setEvents={setEvents}
-            />
-          </div>
-          <div className={`section-cont ${data[0].color}`}>
-            <h5>Upcoming Events</h5>
-            {events
-              .filter((el) => el.jobId === jobId.id)
-              .map((event) => (
-                <EventsItem
-                  key={event._id}
-                  event={event}
-                  getUserEvents={getUserEvents}
-                  setEvents={setEvents}
-                />
-              ))}
-          </div>
+      <section>
+        <div className={`section-cont form-box ${data[0].color}`}>
+          <JobInfo
+            jobs={jobs}
+            setJobs={setJobs}
+            getUserJobs={getUserJobs}
+            className={data[0].color}
+          />
         </div>
         <div className={`section-cont form-box ${data[0].color}`}>
           <h2 className='white-text slim'>Tasks</h2>
@@ -124,7 +104,31 @@ function JobDetails({
               );
             })}
         </div>
-      </div>
+      </section>
+      <section>
+        <div className={`section-cont form-box ${data[0].color}`}>
+          <AddEventForm
+            events={events}
+            getUserEvents={getUserEvents}
+            setEvents={setEvents}
+          />
+        </div>
+        <div className={`section-cont form-box ${data[0].color}`}>
+          <h5>Upcoming Events</h5>
+          {filteredEvents.length ? (
+            filteredEvents.map((singleEvent) => (
+              <EventsItem
+                key={singleEvent._id}
+                singleEvent={singleEvent}
+                getUserEvents={getUserEvents}
+                setEvents={setEvents}
+              />
+            ))
+          ) : (
+            <div>No upcoming events</div>
+          )}
+        </div>
+      </section>
     </div>
   ) : (
     <div>Loading</div>

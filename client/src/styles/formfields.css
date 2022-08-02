@@ -1,11 +1,9 @@
 input:disabled {
-  background: rgba(255,255,255,0.4);
-
   color: black;
 }
 
 select:disabled{
-  background: rgba(255,255,255,0.4);
+  background: white;
   color: black;
 }
 
@@ -17,7 +15,7 @@ select:disabled{
 .form-box {
   width: 100%;
   max-width: 800px;
-  padding: 30px 15px;
+  padding: 1rem;
   border-radius: var(--radius);
 }
 .form-label {
@@ -32,7 +30,8 @@ select:disabled{
   padding: 15px 10px;
   border: 1px solid var(--clr-gray200);
   border-radius: 4px;
-  background: rgba(255,255,255,0.4);
+
+  background: white;
   color: #3d3935;
   outline: 0;
   font-size: 1.2rem;
@@ -53,4 +52,35 @@ fieldset {
   max-width: 800px;
   margin-left:auto;
   margin-right: auto;
+}
+
+.login-container{
+  max-width: 500px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: var(--radius);
+  color: white;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-login{ 
+  margin-top: 1rem;
+}
+
+.btn-login:hover{
+  cursor: pointer;
+  background-color: white;
+  color: var(--purple);
+}
+
+.login-link{
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.login-option{
+  margin-top: 1rem;
 }

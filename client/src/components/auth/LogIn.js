@@ -34,7 +34,7 @@ function LogIn() {
   }
   return (
     <>
-      <section className='container purple'>
+      <section className='login-container purple'>
         <p>{error}</p>
         <h1>Log In</h1>
         <form onSubmit={handleSubmit}>
@@ -62,15 +62,18 @@ function LogIn() {
               required
               ref={passwordRef}
             />
-
-            <button disabled={loading}>Log In</button>
           </fieldset>
+
+          <button className='btn btn-login' disabled={loading}>
+            Log In
+          </button>
         </form>
-        <p>
+        <p className='login-option'>
           Not registered?
-          <br />
-          <span className='line'>
-            <Link to='/sighup'>Sign Up</Link>
+          <span>
+            <Link className='login-link' to='/signup'>
+              Sign Up
+            </Link>
           </span>
         </p>
       </section>

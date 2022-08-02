@@ -8,7 +8,7 @@ import CreateJob from './components/jobs/CreateJob';
 import JobDetails from './components/jobs/JobDetails';
 import Navbar from './components/navbar/Navbar';
 import PrivateRoute from './components/privateroutes/PrivateRoute';
-import Tasks from './components/todos/Tasks';
+import EventsTasks from './components/eventstasks/EventsTasks';
 import ApiClientService from './services/ApiClientService';
 import { useAuth } from './components/context/AuthContext';
 
@@ -18,8 +18,14 @@ function App() {
   const { currentUser } = useAuth();
 
   useEffect(() => {
-    getUserJobs(currentUser.uid);
-    getUserEvents();
+    try {
+      if (currentUser) {
+        getUserJobs(currentUser.uid);
+        getUserEvents();
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   async function getUserJobs(userId) {
@@ -59,7 +65,10 @@ function App() {
               path='/createJob'
               element={<CreateJob setJobs={setJobs} />}
             />
-            <Route path='/tasks' element={<Tasks jobs={jobs} />} />
+            <Route
+              path='/tasks'
+              element={<EventsTasks jobs={jobs} events={events} />}
+            />
           </Route>
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<LogIn />} />

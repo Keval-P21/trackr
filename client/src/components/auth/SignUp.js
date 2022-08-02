@@ -39,10 +39,9 @@ function SignUp() {
   }
   return (
     <>
-      <section>
+      <section className='login-container purple'>
         <p>{error}</p>
         <h3>Sign Up</h3>
-        {JSON.stringify(currentUser)}
         <form onSubmit={handleSubmit}>
           <fieldset>
             <label htmlFor='email' className='form-label'>
@@ -82,13 +81,16 @@ function SignUp() {
             />
           </fieldset>
 
-          <button disabled={loading}>Sign Up</button>
+          <button className='btn btn-login' disabled={loading}>
+            Sign Up
+          </button>
         </form>
-        <p>
+        <p className='login-option'>
           Already registered?
-          <br />
-          <span className='line'>
-            <Link to='/login'>Sign In</Link>
+          <span>
+            <Link className='login-link' to='/login'>
+              Sign In
+            </Link>
           </span>
         </p>
       </section>

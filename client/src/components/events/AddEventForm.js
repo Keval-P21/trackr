@@ -51,7 +51,7 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
   const minStartDate = new Date().toISOString().slice(0, 16);
 
   return (
-    <div className='form-box'>
+    <div>
       <h2 className='white-text slim'>Add Event</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
         <fieldset>
@@ -77,7 +77,6 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
             className='form-input'
             // ref={decriptionEventRef}
             onChange={handleDescriptionChange}
-            required
           />
         </fieldset>
         <fieldset>
@@ -91,7 +90,6 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
             className='form-input'
             // ref={locationEventRef}
             onChange={handleLocationChange}
-            required
           />
         </fieldset>
         <fieldset>

@@ -27,12 +27,12 @@ function Navbar() {
           Dashboard
         </Link>
         <Link to='/tasks' className='nav-item'>
-          Tasks
+          Events & Tasks
         </Link>
         <Link to='/createJob' className='nav-item'>
           Add Job
         </Link>
-        <button className='btn-logout' onClick={handleLogOut}>
+        <button className='btn btn-logout' onClick={handleLogOut}>
           Logout
         </button>
       </div>

@@ -90,7 +90,7 @@ function CreateJob({ setJobs }) {
           <label htmlFor='status' className='form-label'>
             Application Status
           </label>
-          <select id='status' className='form-label' defaultValue={''} required>
+          <select id='status' className='form-input' defaultValue={''} required>
             <option value='' disabled>
               Application Status *
             </option>

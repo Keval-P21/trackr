@@ -3,7 +3,7 @@ import TodoSingle from './TodoSingle';
 import { Link } from 'react-router-dom';
 
 function JobTasks({ data }) {
-  return (
+  return data ? (
     <div>
       <div>
         {data.title} - {data.company}
@@ -19,6 +19,8 @@ function JobTasks({ data }) {
           })}
       </div>
     </div>
+  ) : (
+    <div>No Tasks Yet</div>
   );
 }
 
