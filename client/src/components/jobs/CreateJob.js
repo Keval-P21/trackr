@@ -136,7 +136,7 @@ function CreateJob({ setJobs }) {
         </fieldset>
 
         <div className='input-field'>
-          <button className='btn btn-detail' type='submit'>
+          <button className='btn btn-save' type='submit'>
             Add Job
           </button>
         </div>

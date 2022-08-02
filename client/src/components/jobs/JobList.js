@@ -3,8 +3,8 @@ import JobSummary from './JobSummary';
 
 function JobList({ jobs, section, getUserJobs }) {
   return jobs && jobs.length ? (
-    <>
-      <h4>{section}</h4>
+    <div>
+      <h2 className='slim margin-bottom title-width'>{section}</h2>
       <div className='card-container'>
         {jobs
           .filter((job) => job.status === section.toLowerCase())
@@ -19,7 +19,7 @@ function JobList({ jobs, section, getUserJobs }) {
           })}
       </div>
       <br></br>
-    </>
+    </div>
   ) : (
     <div>Loading</div>
   );

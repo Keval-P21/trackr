@@ -79,17 +79,20 @@ function JobDetails({
               <label htmlFor='title' className='form-label'>
                 Add Task
               </label>
-              <input
-                type='text'
-                placeholder='Enter as task...'
-                ref={todoRef}
-                className='form-input'
-                required
-              />
+              <div className='task-cont'>
+                <input
+                  type='text'
+                  placeholder='Enter as task...'
+                  ref={todoRef}
+                  className='form-input-task'
+                  required
+                />
 
-              <button type='submit' className='btn'>
-                +
-              </button>
+                <button type='submit' className='btn btn-add'>
+                  +
+                </button>
+              </div>
+              <br></br>
             </fieldset>
           </form>
           {data.todos

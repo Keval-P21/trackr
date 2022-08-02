@@ -119,7 +119,7 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
             required
           />
         </fieldset>
-        <input type='submit' value='Save' className='btn' />
+        <input type='submit' value='Save' className='btn btn-save' />
       </form>
     </div>
   );

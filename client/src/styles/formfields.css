@@ -17,14 +17,28 @@ select:disabled{
 }
 .form-input {
   width: 100%;
-  padding: 15px 10px;
+  padding: 0.8rem;
   border: 1px solid var(--clr-gray200);
   border-radius: 4px;
   background: white;
   color: #3d3935;
   outline: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
+
+.form-input-task {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--clr-gray200);
+  border-radius: 4px;
+  background: white;
+  color: #3d3935;
+  outline: 0;
+  font-size: 1rem;
+  position: relative;
+}
+
+
 fieldset {
   margin: .4rem 0;
   padding: 0;
@@ -73,4 +87,22 @@ fieldset {
 
 .login-option{
   margin-top: 1rem;
+}
+
+.task-cont{
+  display: flex;
+  gap: 1rem;
+  /* outline: 3px solid red ; */
+}
+
+.todo-item{
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  background: rgba(0,0,0, 0.4);
+  color: white;
+  outline: 0;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }

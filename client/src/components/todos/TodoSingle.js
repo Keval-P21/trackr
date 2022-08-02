@@ -2,11 +2,11 @@ import React from 'react';
 
 function TodoSingle({ task, deleteTodo }) {
   return (
-    <div>
-      <span>{task.content}</span>
+    <div className='task-cont'>
+      <div className='todo-item'>- {task.content}</div>
       {deleteTodo ? (
-        <button onClick={() => deleteTodo(task._id)}>
-          <i className='material-icons'>delete</i>
+        <button className='btn btn-bin' onClick={() => deleteTodo(task._id)}>
+          <span className='material-icons'>delete</span>
         </button>
       ) : (
         <></>

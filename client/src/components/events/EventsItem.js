@@ -38,8 +38,16 @@ function EventsItem({ singleEvent, getUserEvents }) {
       <span>
         <label className='form-label'> Event: </label> <p>{singleEvent.name}</p>
       </span>
-      <button onClick={submitEvent}>Add to calendar</button>
-      <button onClick={() => deleteEvent(singleEvent._id)}>Delete</button>
+      <button onClick={submitEvent}>
+        <span className='material-icons'>event_available</span>
+      </button>
+      <button
+        className='btn btn-bin'
+        onClick={() => deleteEvent(singleEvent._id)}
+      >
+        <span className='material-icons'>delete</span>
+      </button>
+
       <p>{singleEvent.location}</p>
       <p>{singleEvent.description}</p>
     </div>

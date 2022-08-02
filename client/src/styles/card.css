@@ -1,18 +1,20 @@
 .card-container{
   display: flex;
-  flex-wrap: nowrap;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-   -ms-overflow-style: -ms-autohiding-scrollbar; 
+  flex-direction: column;
+  gap: 1rem;
+ /* outline: 3px solid red ; */
+ -webkit-overflow-scrolling: touch;
+ -ms-overflow-style: -ms-autohiding-scrollbar; 
 }
 
 .card {
+  /* outline: 3px solid green ; */
   flex: 0 0 auto;
-  width: 15rem;
+  width: 18rem;
   display: flex;
   flex-direction: column;
-  margin: 1%;
-  padding: 30px;
+  /* margin: 1%; */
+  padding: 2rem;
   border-radius: var(--radius);
   position: relative;
   transition: .3s all;
@@ -24,35 +26,56 @@
 .card:hover {
   transform: scale(1.05);
 }
-.card h5{
+.card h4{
   text-transform: uppercase;
   margin-bottom: 0.4rem;
+  font-size: 1.2rem;
 }
 
 .card p{
   margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
 .btn{
   justify-self: flex-end;
   left: 2rem;
-  bottom: 1.5rem;
   font-size: 1rem;
   text-decoration: none;
   color: white;
   background: rgba(0,0,0,.2);
-  padding: 10px 20px;
-  border-radius: 10000px;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius);
   transition: .3s all;
   cursor: pointer;
   border: none;
   margin-right: 1rem;
 }
+.btn:hover{
+  background: rgba(255,255,255,.8);
+  color: #2e2e2e;
+}
+.btn-add{
+  padding: 0.75rem 2rem;
+  bottom: none;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.btn-save{
+  padding: 0.75rem 2rem;
+  bottom: none;
+}
+
+.btn-bin{
+  padding: 0.5rem 1.55rem;
+  margin: 0rem 0rem 0.5rem 0rem;
+}
+
 .btn-detail{
  font-size: 0.8rem;
 }
 .btn-detail:hover{
-  font-size: 0.8rem;
   background: rgba(255,255,255,.8);
   color: #2e2e2e;
 }

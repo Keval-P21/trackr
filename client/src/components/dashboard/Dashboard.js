@@ -12,11 +12,18 @@ function Dashboard({ jobs, getUserJobs }) {
   ];
 
   return jobs ? (
-    <div className='row'>
-      <h3>Dashboard</h3>
-      {sections.map((el, i) => (
-        <JobList jobs={jobs} key={el} section={el} getUserJobs={getUserJobs} />
-      ))}
+    <div>
+      <h2>Dashboard</h2>
+      <div className='container-dash'>
+        {sections.map((el, i) => (
+          <JobList
+            jobs={jobs}
+            key={el}
+            section={el}
+            getUserJobs={getUserJobs}
+          />
+        ))}
+      </div>
     </div>
   ) : (
     <div>You have no applications tracked yet!</div>

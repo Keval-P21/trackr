@@ -190,16 +190,16 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
 
         {isDisabled ? (
           <>
-            <button className='btn' onClick={handleClick}>
+            <button className='btn btn-save' onClick={handleClick}>
               Edit
             </button>
           </>
         ) : (
           <>
-            <button className='btn' onClick={refresh}>
+            <button className='btn btn-save' onClick={refresh}>
               Cancel
             </button>
-            <button className='btn' onClick={handleSave}>
+            <button className='btn btn-save' onClick={handleSave}>
               Save
             </button>
           </>

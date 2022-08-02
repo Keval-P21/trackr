@@ -19,7 +19,7 @@ function JobSummary({ data, getUserJobs }) {
     <div className={`card card-panel ${data.color}`}>
       {del ? (
         <>
-          <h5>Are you sure?</h5>
+          <h4>Are you sure?</h4>
           <p>This action cannot be undone!</p>
           <div>
             <button
@@ -38,7 +38,7 @@ function JobSummary({ data, getUserJobs }) {
           <button className='btn-close' onClick={toggleDelete}>
             <span className='material-icons md-18'>close</span>
           </button>
-          <h5>{data.title}</h5>
+          <h4>{data.title}</h4>
           <p>{data.company}</p>
           <div className='pad-top'>
             <Link to={`/job/${data._id}`} className='btn btn-detail'>
