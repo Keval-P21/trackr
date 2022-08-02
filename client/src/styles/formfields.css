@@ -7,17 +7,7 @@ select:disabled{
   color: black;
 }
 
-.job-det-cont{
-  display: flex;
-  justify-content: center;
-}
 
-.form-box {
-  width: 100%;
-  max-width: 800px;
-  padding: 1rem;
-  border-radius: var(--radius);
-}
 .form-label {
   display: inline-block;
   margin: .5rem 0;
@@ -30,7 +20,6 @@ select:disabled{
   padding: 15px 10px;
   border: 1px solid var(--clr-gray200);
   border-radius: 4px;
-
   background: white;
   color: #3d3935;
   outline: 0;
@@ -50,6 +39,7 @@ fieldset {
   justify-self: center;
   border-radius: var(--radius);
   max-width: 800px;
+  width: 100%;
   margin-left:auto;
   margin-right: auto;
 }

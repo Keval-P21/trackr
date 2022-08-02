@@ -22,11 +22,14 @@ function App() {
       if (currentUser) {
         getUserJobs(currentUser.uid);
         getUserEvents();
+      } else {
+        console.log('Hello');
       }
     } catch (error) {
       console.log(error);
     }
   }, []);
+  // });
 
   async function getUserJobs(userId) {
     const userJobs = await ApiClientService.getJobs(userId);

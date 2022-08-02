@@ -21,13 +21,13 @@ function JobDetails({
 
   if (!jobs) return <div>Loading</div>;
 
-  const data = jobs.filter((job) => job._id === jobId.id);
+  const data = jobs.filter((job) => job._id === jobId.id)[0];
 
   async function submitTodo(event) {
     const todoData = {
-      ...data[0],
+      ...data,
       todos: [
-        ...data[0].todos,
+        ...data.todos,
         {
           content: todoRef.current.value,
           completed: false,
@@ -43,11 +43,11 @@ function JobDetails({
     event.target.reset();
   }
   async function deleteTodo(id) {
-    const todoData = data[0].todos;
+    const todoData = data.todos;
     const filteredTodo = todoData.filter((el) => el._id === id)[0];
     filteredTodo.active = false;
     const updatedTodos = {
-      ...data[0],
+      ...data,
       todos: todoData,
     };
 
@@ -61,18 +61,18 @@ function JobDetails({
 
   const filteredEvents = events.filter((el) => el.jobId === jobId.id);
 
-  return jobs && data.length ? (
+  return jobs && data ? (
     <div className='job-det-cont'>
-      <section>
-        <div className={`section-cont form-box ${data[0].color}`}>
+      <section className='outline'>
+        <div className={`form-box ${data.color}`}>
           <JobInfo
             jobs={jobs}
             setJobs={setJobs}
             getUserJobs={getUserJobs}
-            className={data[0].color}
+            className={data.color}
           />
         </div>
-        <div className={`section-cont form-box ${data[0].color}`}>
+        <div className={`form-box ${data.color}`}>
           <h2 className='white-text slim'>Tasks</h2>
           <form onSubmit={submitTodo}>
             <fieldset>
@@ -92,7 +92,7 @@ function JobDetails({
               </button>
             </fieldset>
           </form>
-          {data[0].todos
+          {data.todos
             .filter((task) => task.active)
             .map((task) => {
               return (
@@ -105,16 +105,16 @@ function JobDetails({
             })}
         </div>
       </section>
-      <section>
-        <div className={`section-cont form-box ${data[0].color}`}>
+      <section className='outline'>
+        <div className={`form-box ${data.color}`}>
           <AddEventForm
             events={events}
             getUserEvents={getUserEvents}
             setEvents={setEvents}
           />
         </div>
-        <div className={`section-cont form-box ${data[0].color}`}>
-          <h5>Upcoming Events</h5>
+        <div className={`form-box ${data.color}`}>
+          <h2 className='white-text slim'>Upcoming Events</h2>
           {filteredEvents.length ? (
             filteredEvents.map((singleEvent) => (
               <EventsItem
@@ -125,7 +125,7 @@ function JobDetails({
               />
             ))
           ) : (
-            <div>No upcoming events</div>
+            <div className='white-text pad-top'>No Upcoming Events</div>
           )}
         </div>
       </section>

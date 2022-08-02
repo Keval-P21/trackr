@@ -2,8 +2,10 @@ import React from 'react';
 import { atcb_action } from 'add-to-calendar-button';
 import 'add-to-calendar-button/assets/css/atcb.css';
 import ApiClientService from '../../services/ApiClientService';
+import { useAuth } from '../context/AuthContext';
 
 function EventsItem({ singleEvent, getUserEvents }) {
+  const { currentUser } = useAuth();
   function submitEvent(e) {
     e.preventDefault();
     atcb_action({
@@ -26,19 +28,20 @@ function EventsItem({ singleEvent, getUserEvents }) {
     });
   }
 
-  // console.log(singleEvent);
-
   async function deleteEvent(id) {
-    console.log(id);
-    // await ApiClientService.deleteEvent(id);
-    // getUserEvents();
+    await ApiClientService.deleteEvent(id);
+    getUserEvents(currentUser.uid);
   }
 
   return singleEvent ? (
     <div>
-      <p>{singleEvent.name}</p>
+      <span>
+        <label className='form-label'> Event: </label> <p>{singleEvent.name}</p>
+      </span>
       <button onClick={submitEvent}>Add to calendar</button>
-      <button oncClick={() => deleteEvent(singleEvent._id)}>Delete</button>
+      <button onClick={() => deleteEvent(singleEvent._id)}>Delete</button>
+      <p>{singleEvent.location}</p>
+      <p>{singleEvent.description}</p>
     </div>
   ) : (
     <div>Loading...</div>

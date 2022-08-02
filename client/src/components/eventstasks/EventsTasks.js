@@ -6,26 +6,29 @@ import JobTasks from '../todos/JobTasks';
 function EventsTasks({ jobs, events }) {
   // console.log(events);
   return jobs && events ? (
-    <section>
-      <div className=''>
-        <h4>Tasks</h4>
+    <section className='job-det-cont'>
+      <div className='form-box blue white-text'>
+        <h2 className='white-text slim'>Tasks</h2>
         <div>
-          {jobs
-            .filter((data) => data.todos.length > 0)
-            .map((data) => (
-              <JobTasks data={data} key={data._id} />
-            ))}
+          {jobs ? (
+            jobs
+              .filter((data) => data.todos.length > 0)
+              .map((data) => <JobTasks data={data} key={data._id} />)
+          ) : (
+            <p>No Tasks</p>
+          )}
         </div>
       </div>
-      <div className=''>
-        <h4>Events</h4>
+      <div className='form-box purple white-text'>
+        <h2 className='white-text slim'>Events</h2>
         <div>
-          {events.map((data) => (
-            <>
-              {/* <EventsItem singleEvent={data} /> */}
+          {events ? (
+            events.map((data) => (
               <JobEvents key={data._id} singleEvent={data} jobs={jobs} />
-            </>
-          ))}
+            ))
+          ) : (
+            <p>No Tasks</p>
+          )}
         </div>
       </div>
     </section>

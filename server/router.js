@@ -21,7 +21,7 @@ router.put('/jobs/:id', updateJob);
 // Router for events
 router.get('/events', getEvents);
 router.post('/events/:jobId', createNewEvent);
-router.delete('/events/:jobId/:id', deleteEvent);
-router.put('/events/:jobId/:id', updateEvent);
+router.delete('/events/:id', deleteEvent);
+router.put('/events/:id', updateEvent);
 
 module.exports = router;

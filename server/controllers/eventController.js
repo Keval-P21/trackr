@@ -22,7 +22,7 @@ const createNewEvent = async (req, res) => {
 
 const deleteEvent = async (req, res) => {
   try {
-    await eventModel.deleteOneEvents(req.params.id);
+    await eventModel.deleteOneEvent(req.params.id);
     res.status(204).send('Deleted Job');
   } catch (error) {
     console.log('Error in deleteEvent', error);

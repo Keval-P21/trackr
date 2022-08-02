@@ -24,7 +24,6 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
       endTime,
       location,
     };
-    console.log(data);
     await ApiClientService.addEvent(data);
     setEvents((prev) => [...prev, data]);
     event.target.reset();
@@ -60,7 +59,7 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
           </label>
           <input
             id='name'
-            placeholder='Event title...'
+            placeholder='Event title'
             // ref={nameEventRef}
             onChange={handleNameChange}
             className='form-input'
@@ -73,7 +72,7 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
           </label>
           <input
             id='description'
-            placeholder='Decription...'
+            placeholder='Decription'
             className='form-input'
             // ref={decriptionEventRef}
             onChange={handleDescriptionChange}
@@ -86,7 +85,7 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
 
           <input
             id='location'
-            placeholder='Location...'
+            placeholder='Location'
             className='form-input'
             // ref={locationEventRef}
             onChange={handleLocationChange}

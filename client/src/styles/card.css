@@ -37,7 +37,7 @@
   justify-self: flex-end;
   left: 2rem;
   bottom: 1.5rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-decoration: none;
   color: white;
   background: rgba(0,0,0,.2);
@@ -48,9 +48,12 @@
   border: none;
   margin-right: 1rem;
 }
+.btn-detail{
+ font-size: 0.8rem;
+}
 .btn-detail:hover{
+  font-size: 0.8rem;
   background: rgba(255,255,255,.8);
-  transform: scale(1.05);
   color: #2e2e2e;
 }
 
@@ -66,7 +69,6 @@
 }
 .btn-close:hover{
   color: #2e2e2e;
-  transform: scale(1.05);
 }
 
 .btn-confirm{

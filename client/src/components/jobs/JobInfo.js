@@ -127,6 +127,7 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
             defaultValue={data[0].salary ?? ''}
             disabled={isDisabled}
             ref={salaryRef}
+            placeholder='Salary'
           />
         </fieldset>
 
@@ -141,6 +142,7 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
             defaultValue={data[0].location ?? ''}
             disabled={isDisabled}
             ref={locationRef}
+            placeholder='Location'
           />
         </fieldset>
         <fieldset>
@@ -154,32 +156,35 @@ function JobInfo({ jobs, setJobs, getUserJobs }) {
             defaultValue={data[0].post_url ?? ''}
             disabled={isDisabled}
             ref={post_urlRef}
+            placeholder='https://example.com'
           />
         </fieldset>
         <fieldset>
           <label htmlFor='description' className='form-label'>
             Description
           </label>
-          <input
+          <textarea
             type='text'
             id='description'
             className='form-input'
             defaultValue={data[0].description ?? ''}
             disabled={isDisabled}
             ref={descriptionRef}
+            placeholder='Description'
           />
         </fieldset>
         <fieldset>
           <label htmlFor='notes' className='form-label'>
             Notes
           </label>
-          <input
+          <textarea
             type='text'
             id='notes'
             className='form-input'
             defaultValue={data[0].notes ?? ''}
             disabled={isDisabled}
             ref={notesRef}
+            placeholder='Notes'
           />
         </fieldset>
 

@@ -2,7 +2,7 @@ import React from 'react';
 import JobSummary from './JobSummary';
 
 function JobList({ jobs, section, getUserJobs }) {
-  return jobs && jobs.length && section ? (
+  return jobs && jobs.length ? (
     <>
       <h4>{section}</h4>
       <div className='card-container'>

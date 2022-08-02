@@ -36,7 +36,7 @@ function LogIn() {
     <>
       <section className='login-container purple'>
         <p>{error}</p>
-        <h1>Log In</h1>
+        <h2 className='white-text slim'>Login</h2>
         <form onSubmit={handleSubmit}>
           <fieldset>
             <label htmlFor='email' className='form-label'>

@@ -41,49 +41,81 @@ function CreateJob({ setJobs }) {
   return (
     <div className='create-cont purple pad-around'>
       {/* <div className='form-cont'> */}
-      <form className='form-cont' onSubmit={handleSubmit}>
-        <h5 className='white-text'>Add New Job</h5>
+      <form onSubmit={handleSubmit}>
+        <h2 className='white-text slim'>Add New Job</h2>
 
         <fieldset>
           <label htmlFor='title' className='form-label'>
             Job Title *
           </label>
-          <input type='text' id='title' className='form-input' required />
+          <input
+            type='text'
+            id='title'
+            className='form-input'
+            placeholder='Job Title *'
+            required
+          />
         </fieldset>
 
         <fieldset>
           <label htmlFor='company' className='form-label'>
             Company *
           </label>
-          <input type='text' id='company' className='form-input' required />
+          <input
+            type='text'
+            id='company'
+            className='form-input'
+            placeholder='Company *'
+            required
+          />
         </fieldset>
 
         <fieldset>
           <label htmlFor='salary' className='form-label'>
             Salary
           </label>
-          <input type='text' id='salary' className='form-input' />
+          <input
+            type='text'
+            id='salary'
+            className='form-input'
+            placeholder='Salary'
+          />
         </fieldset>
 
         <fieldset>
           <label htmlFor='location' className='form-label'>
             Location
           </label>
-          <input type='text' id='location' className='form-input' />
+          <input
+            type='text'
+            id='location'
+            className='form-input'
+            placeholder='Location'
+          />
         </fieldset>
 
         <fieldset>
           <label htmlFor='post_url' className='form-label'>
             URL (Link)
           </label>
-          <input type='text' id='post_url' className='form-input' />
+          <input
+            type='url'
+            id='post_url'
+            className='form-input'
+            placeholder='https://example.com'
+          />
         </fieldset>
 
         <fieldset>
           <label htmlFor='description' className='form-label'>
             Description
           </label>
-          <input type='text' id='description' className='form-input' />
+          <textarea
+            type='text'
+            id='description'
+            className='form-input'
+            placeholder='Description'
+          />
         </fieldset>
 
         <fieldset>
@@ -104,7 +136,7 @@ function CreateJob({ setJobs }) {
         </fieldset>
 
         <div className='input-field'>
-          <button className='btn' type='submit'>
+          <button className='btn btn-detail' type='submit'>
             Add Job
           </button>
         </div>

@@ -41,7 +41,7 @@ function SignUp() {
     <>
       <section className='login-container purple'>
         <p>{error}</p>
-        <h3>Sign Up</h3>
+        <h2 className='white-text slim'>Sign Up</h2>
         <form onSubmit={handleSubmit}>
           <fieldset>
             <label htmlFor='email' className='form-label'>
@@ -89,7 +89,7 @@ function SignUp() {
           Already registered?
           <span>
             <Link className='login-link' to='/login'>
-              Sign In
+              Login
             </Link>
           </span>
         </p>

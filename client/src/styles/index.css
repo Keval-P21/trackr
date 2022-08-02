@@ -70,13 +70,29 @@ body {
   flex-direction: column;
 }
 
-.section-cont{
-  border-radius: var(--radius);
-  width: 50%;
-  margin: 1rem;
+.job-det-cont{
+  display: flex;
+  align-items: column;
+  justify-content: center;
+  box-sizing: border-box;
+  outline: 3px solid green ;
+  gap: 2rem;
 }
 
-
+.form-box {
+  width: 100%;
+  max-width: 800px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  outline: 3px solid blue ;
+}
+.outline{
+  width: 100%;
+  max-width: 800px;
+  outline: 3px solid red ;
+}
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;

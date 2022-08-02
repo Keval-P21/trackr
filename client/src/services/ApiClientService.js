@@ -66,4 +66,23 @@ async function addEvent(data) {
   }
 }
 
-module.exports = { getJobs, addJob, editJob, deleteJob, getEvents, addEvent };
+async function deleteEvent(id) {
+  try {
+    await fetch(`${baseUrl}/events/${id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    console.log('DELETE request error', error);
+  }
+}
+
+module.exports = {
+  getJobs,
+  addJob,
+  editJob,
+  deleteJob,
+  getEvents,
+  addEvent,
+  deleteEvent,
+};
