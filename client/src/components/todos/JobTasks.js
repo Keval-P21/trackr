@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 function JobTasks({ data }) {
   return data ? (
     <div>
-      <div>
+      <h3 className='slim margin-bottom'>
         {data.title} - {data.company}
-        <Link to={`/job/${data._id}`} className='btn'>
-          Edit Tasks
+        <Link to={`/job/${data._id}`} className='btn margin-left'>
+          Details
         </Link>
-      </div>
+      </h3>
       <div>
         {data.todos
           .filter((task) => task.active)

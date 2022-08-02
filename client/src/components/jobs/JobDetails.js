@@ -117,7 +117,7 @@ function JobDetails({
           />
         </div>
         <div className={`form-box ${data.color}`}>
-          <h2 className='white-text slim'>Upcoming Events</h2>
+          <h2 className='white-text slim margin-bottom'>Upcoming Events</h2>
           {filteredEvents.length ? (
             filteredEvents.map((singleEvent) => (
               <EventsItem

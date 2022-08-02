@@ -66,6 +66,23 @@ body {
   margin: 1rem 0;
 }
 
+.margin-left{
+  margin-left: 1rem;
+}
+
+.logo-text{
+  font-size: 8rem;
+  font-family: 'BhuTuka Expanded One';
+  font-weight: 800;
+  margin:auto;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.logo-font{
+  font-family: 'BhuTuka Expanded One';
+}
+
 .title-width{
   max-width: 18rem;
   min-width: 18rem;

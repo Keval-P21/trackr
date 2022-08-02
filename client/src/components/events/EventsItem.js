@@ -34,22 +34,54 @@ function EventsItem({ singleEvent, getUserEvents }) {
   }
 
   return singleEvent ? (
-    <div>
-      <span>
-        <label className='form-label'> Event: </label> <p>{singleEvent.name}</p>
-      </span>
-      <button onClick={submitEvent}>
-        <span className='material-icons'>event_available</span>
-      </button>
-      <button
-        className='btn btn-bin'
-        onClick={() => deleteEvent(singleEvent._id)}
-      >
-        <span className='material-icons'>delete</span>
-      </button>
-
-      <p>{singleEvent.location}</p>
-      <p>{singleEvent.description}</p>
+    <div className='task-cont'>
+      <div className='todo-item'>
+        <div className='slim'>
+          <span>
+            <label className='form-label'> Event :</label>
+          </span>
+          {singleEvent.name}
+        </div>
+        <div className='slim'>
+          <span>
+            <label className='form-label'> Description :</label>
+          </span>
+          {singleEvent.description}
+        </div>
+        <div className='slim'>
+          <span>
+            <label className='form-label'> Location :</label>
+          </span>
+          {singleEvent.location}
+        </div>
+        <span>
+          <div className='slim'>
+            <span>
+              <label className='form-label'> Date :</label>
+            </span>
+            {singleEvent.startDate}
+          </div>
+        </span>
+        <span>
+          <div className='slim'>
+            <span>
+              <label className='form-label'> Time :</label>
+            </span>
+            {singleEvent.startTime}
+          </div>
+        </span>
+      </div>
+      <div className='btn-cont'>
+        <button className='btn btn-bin' onClick={submitEvent}>
+          <span className='material-icons'>event_available</span>
+        </button>
+        <button
+          className='btn btn-bin'
+          onClick={() => deleteEvent(singleEvent._id)}
+        >
+          <span className='material-icons'>delete</span>
+        </button>
+      </div>
     </div>
   ) : (
     <div>Loading...</div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import EventsItem from '../events/EventsItem';
 import JobEvents from '../events/JobEvents';
 import JobTasks from '../todos/JobTasks';
 
@@ -8,7 +7,7 @@ function EventsTasks({ jobs, events }) {
   return jobs && events ? (
     <section className='job-det-cont'>
       <div className='form-box blue white-text'>
-        <h2 className='white-text slim'>Tasks</h2>
+        <h2 className='white-text slim margin-bottom'>Tasks</h2>
         <div>
           {jobs ? (
             jobs
@@ -19,8 +18,8 @@ function EventsTasks({ jobs, events }) {
           )}
         </div>
       </div>
-      <div className='form-box purple white-text'>
-        <h2 className='white-text slim'>Events</h2>
+      <div className='form-box purple white-text '>
+        <h2 className='white-text slim margin-bottom'>Events</h2>
         <div>
           {events ? (
             events.map((data) => (

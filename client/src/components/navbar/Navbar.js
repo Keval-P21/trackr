@@ -20,7 +20,7 @@ function Navbar() {
     <nav>
       <div className='nav-list'>
         <Link to='/' className='nav-item'>
-          Trackr
+          <h3 className='logo-font'>Trackr</h3>
         </Link>
 
         <Link to='/' className='nav-item'>
@@ -41,7 +41,7 @@ function Navbar() {
     <nav>
       <div className='nav-list'>
         <Link to='/' className='nav-item'>
-          Trackr
+          <h3 className='logo-font'>Trackr</h3>
         </Link>
       </div>
     </nav>

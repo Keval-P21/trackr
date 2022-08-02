@@ -39,6 +39,7 @@ function SignUp() {
   }
   return (
     <>
+      <div className='logo-text'> Trackr</div>
       <section className='login-container purple'>
         <p>{error}</p>
         <h2 className='white-text slim'>Sign Up</h2>

@@ -21,7 +21,10 @@ function JobList({ jobs, section, getUserJobs }) {
       <br></br>
     </div>
   ) : (
-    <div>Loading</div>
+    <div>
+      <h2 className='slim'>{section}</h2>
+      Add a job to start tracking
+    </div>
   );
 }
 

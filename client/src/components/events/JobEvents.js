@@ -2,27 +2,59 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function JobEvents({ singleEvent, jobs }) {
-  const job = jobs.filter((el) => el._id === singleEvent.jobId)[0];
-
-  return (
+  const job = jobs.filter((el) => el._id === singleEvent.jobId);
+  // console.log(jobs);
+  // console.log(job);
+  return jobs && singleEvent ? (
     <>
-      <div>
+      <h3 className='slim margin-bottom'>
         {job.title} - {job.company}
-        <Link to={`/job/${job._id}`} className='btn'>
-          Application Details
+        <Link to={`/job/${job._id}`} className='btn margin-left'>
+          Details
         </Link>
-        <p>{singleEvent.name}</p>
-        <p>{singleEvent.location}</p>
-        <p>{singleEvent.description}</p>
+      </h3>
+      <div className='task-cont'>
+        <div className='todo-item'>
+          <h3 className='slim'>
+            <span>
+              <label className='form-label'> Event :</label>
+            </span>
+            {singleEvent.name}
+          </h3>
+          <h3 className='slim'>
+            <span>
+              <label className='form-label'> Description :</label>
+            </span>
+            {singleEvent.description}
+          </h3>
+          <h3 className='slim'>
+            <span>
+              <label className='form-label'> Location :</label>
+            </span>
+            {singleEvent.location}
+          </h3>
+          <span>
+            <h3 className='slim'>
+              <span>
+                <label className='form-label'> Date :</label>
+              </span>
+              {singleEvent.startDate}
+            </h3>
+          </span>
+          <span>
+            <h3 className='slim'>
+              <span>
+                <label className='form-label'> Time :</label>
+              </span>
+              {singleEvent.startTime}
+            </h3>
+          </span>
+        </div>
       </div>
     </>
+  ) : (
+    <div>Loading</div>
   );
 }
-/* .filter(
-              (data) =>
-                Math.floor(
-                  new Date(`${data.endDate}T${data.endTime}`).getTime()
-                ) > Date.now()
-            ) */
 
 export default JobEvents;

@@ -10,7 +10,7 @@ select:disabled{
 
 .form-label {
   display: inline-block;
-  margin: .5rem 0;
+  margin: .5rem 1rem 0.5rem 0rem;
   color: white;
   letter-spacing: .2px;
   font-size: 1rem;
@@ -105,4 +105,12 @@ fieldset {
   outline: 0;
   font-size: 1rem;
   margin-bottom: 0.5rem;
+}
+
+.btn-cont{
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
