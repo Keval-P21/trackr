@@ -17,20 +17,6 @@ function App() {
   const [events, setEvents] = useState([]);
   const { currentUser } = useAuth();
 
-  useEffect(() => {
-    try {
-      if (currentUser) {
-        getUserJobs(currentUser.uid);
-        getUserEvents(currentUser.uid);
-      } else {
-        console.log('Hello');
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }, [currentUser]);
-  // });
-
   async function getUserJobs(userId) {
     const userJobs = await ApiClientService.getJobs(userId);
     setJobs(userJobs);
@@ -40,6 +26,20 @@ function App() {
     const userEvents = await ApiClientService.getEvents(userId);
     setEvents(userEvents);
   }
+
+  useEffect(() => {
+    try {
+      if (currentUser) {
+        getUserJobs(currentUser.uid);
+        getUserEvents(currentUser.uid);
+      } else {
+        console.log('Test Case');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, [currentUser]);
+
   return (
     <div className='App'>
       <Navbar />

@@ -63,7 +63,6 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
           <input
             id='name'
             placeholder='Event title'
-            // ref={nameEventRef}
             onChange={handleNameChange}
             className='form-input'
             required
@@ -77,7 +76,6 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
             id='description'
             placeholder='Decription'
             className='form-input'
-            // ref={decriptionEventRef}
             onChange={handleDescriptionChange}
           />
         </fieldset>
@@ -90,7 +88,6 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
             id='location'
             placeholder='Location'
             className='form-input'
-            // ref={locationEventRef}
             onChange={handleLocationChange}
           />
         </fieldset>
@@ -102,7 +99,6 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
             id='startDateTime'
             type='datetime-local'
             className='form-input'
-            // ref={startDateEventRef}
             min={minStartDate}
             onChange={handleStartDateChange}
             required
@@ -116,7 +112,6 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
             id='endDateTime'
             type='datetime-local'
             className='form-input'
-            // ref={endDateEventRef}
             onChange={handleEndDateChange}
             min={startDate ? `${startDate}T${startTime}` : minStartDate}
             required

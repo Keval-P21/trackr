@@ -3,7 +3,6 @@ import JobEvents from '../events/JobEvents';
 import JobTasks from '../todos/JobTasks';
 
 function EventsTasks({ jobs, events }) {
-  // console.log(events);
   return jobs && events ? (
     <section className='task-event-cont'>
       <div className='form-box blue white-text'>

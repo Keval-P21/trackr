@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 function JobEvents({ singleEvent, jobs }) {
   const job = jobs.filter((el) => el._id === singleEvent.jobId)[0];
-  // console.log(jobs);
-  console.log({ job, singleEvent });
+
   return job && singleEvent ? (
     <div>
       <h3 className='slim margin-bottom'>
