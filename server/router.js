@@ -12,15 +12,17 @@ const {
   updateEvent,
 } = require('./controllers/eventController');
 
+const authMiddleware = require('./middlewares/auth');
+
 // Routes for jobs
-router.get('/jobs/:userId', getJobs);
-router.post('/jobs/:userId', createNewJob);
+router.get('/jobs/:userId', authMiddleware, getJobs);
+router.post('/jobs/:userId', authMiddleware, createNewJob);
 router.delete('/jobs/:id', deleteJob);
 router.put('/jobs/:id', updateJob);
 
 // Router for events
-router.get('/events/:userId', getEvents);
-router.post('/events/:jobId', createNewEvent);
+router.get('/events/:userId', authMiddleware, getEvents);
+router.post('/events/:jobId', authMiddleware, createNewEvent);
 router.delete('/events/:id', deleteEvent);
 router.put('/events/:id', updateEvent);
 

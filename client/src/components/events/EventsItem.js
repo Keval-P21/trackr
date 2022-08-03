@@ -28,9 +28,9 @@ function EventsItem({ singleEvent, getUserEvents }) {
     });
   }
 
-  async function deleteEvent(id) {
-    await ApiClientService.deleteEvent(id);
-    getUserEvents(currentUser.uid);
+  async function deleteEvent(id, user) {
+    await ApiClientService.deleteEvent(id, user);
+    getUserEvents(currentUser);
   }
 
   return singleEvent ? (
@@ -77,7 +77,7 @@ function EventsItem({ singleEvent, getUserEvents }) {
         </button>
         <button
           className='btn btn-bin'
-          onClick={() => deleteEvent(singleEvent._id)}
+          onClick={() => deleteEvent(singleEvent._id, currentUser)}
         >
           <span className='material-icons'>delete</span>
         </button>

@@ -10,9 +10,9 @@ function JobSummary({ data, getUserJobs }) {
     setDel((current) => !current);
   }
 
-  async function confirmDelete(id) {
-    await ApiClientService.deleteJob(id);
-    getUserJobs(currentUser.uid);
+  async function confirmDelete(id, user) {
+    await ApiClientService.deleteJob(id, user);
+    getUserJobs(currentUser);
   }
 
   return data ? (
@@ -24,7 +24,7 @@ function JobSummary({ data, getUserJobs }) {
           <div>
             <button
               className='btn btn-confirm'
-              onClick={() => confirmDelete(data._id)}
+              onClick={() => confirmDelete(data._id, currentUser)}
             >
               Confirm
             </button>

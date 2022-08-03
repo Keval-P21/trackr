@@ -1,8 +1,12 @@
 const baseUrl = 'http://localhost:3001';
 
-async function getJobs(userId) {
+async function getJobs(user) {
   try {
-    let jobs = await fetch(`${baseUrl}/jobs/${userId}`);
+    let jobs = await fetch(`${baseUrl}/jobs/${user.uid}`, {
+      headers: {
+        Authorization: 'Bearer ' + user.accessToken,
+      },
+    });
     return jobs.json();
   } catch (error) {
     console.log('GET request error', error);
@@ -34,20 +38,27 @@ async function editJob(data) {
   }
 }
 
-async function deleteJob(id) {
+async function deleteJob(id, user) {
   try {
     await fetch(`${baseUrl}/jobs/${id}`, {
       method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + user.accessToken,
+      },
     });
   } catch (error) {
     console.log('DELETE request error', error);
   }
 }
 
-async function getEvents(userId) {
+async function getEvents(user) {
   try {
-    let events = await fetch(`${baseUrl}/events/${userId}`);
+    let events = await fetch(`${baseUrl}/events/${user.uid}`, {
+      headers: {
+        Authorization: 'Bearer ' + user.accessToken,
+      },
+    });
     return events.json();
   } catch (error) {
     console.log('GET request error', error);
@@ -66,11 +77,14 @@ async function addEvent(data) {
   }
 }
 
-async function deleteEvent(id) {
+async function deleteEvent(id, user) {
   try {
     await fetch(`${baseUrl}/events/${id}`, {
       method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + user.accessToken,
+      },
     });
   } catch (error) {
     console.log('DELETE request error', error);

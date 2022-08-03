@@ -17,21 +17,21 @@ function App() {
   const [events, setEvents] = useState([]);
   const { currentUser } = useAuth();
 
-  async function getUserJobs(userId) {
-    const userJobs = await ApiClientService.getJobs(userId);
+  async function getUserJobs(user) {
+    const userJobs = await ApiClientService.getJobs(user);
     setJobs(userJobs);
   }
 
-  async function getUserEvents(userId) {
-    const userEvents = await ApiClientService.getEvents(userId);
+  async function getUserEvents(user) {
+    const userEvents = await ApiClientService.getEvents(user);
     setEvents(userEvents);
   }
 
   useEffect(() => {
     try {
       if (currentUser) {
-        getUserJobs(currentUser.uid);
-        getUserEvents(currentUser.uid);
+        getUserJobs(currentUser);
+        getUserEvents(currentUser);
       } else {
         console.log('Test Case');
       }
