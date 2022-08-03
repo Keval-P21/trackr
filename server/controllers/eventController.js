@@ -2,7 +2,7 @@ const eventModel = require('../models/eventModel');
 
 const getEvents = async (req, res) => {
   try {
-    events = await eventModel.getAllEvents();
+    events = await eventModel.getAllEvents(req.params);
     res.status(200).send(events);
   } catch (error) {
     console.log('Error in getEvents', error);

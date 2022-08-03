@@ -21,7 +21,7 @@ function App() {
     try {
       if (currentUser) {
         getUserJobs(currentUser.uid);
-        getUserEvents();
+        getUserEvents(currentUser.uid);
       } else {
         console.log('Hello');
       }
@@ -36,8 +36,8 @@ function App() {
     setJobs(userJobs);
   }
 
-  async function getUserEvents() {
-    const userEvents = await ApiClientService.getEvents();
+  async function getUserEvents(userId) {
+    const userEvents = await ApiClientService.getEvents(userId);
     setEvents(userEvents);
   }
   return (

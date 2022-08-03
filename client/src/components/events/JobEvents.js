@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function JobEvents({ singleEvent, jobs }) {
-  const job = jobs.filter((el) => el._id === singleEvent.jobId);
+  const job = jobs.filter((el) => el._id === singleEvent.jobId)[0];
   // console.log(jobs);
-  // console.log(job);
-  return jobs && singleEvent ? (
-    <>
+  console.log({ job, singleEvent });
+  return job && singleEvent ? (
+    <div>
       <h3 className='slim margin-bottom'>
         {job.title} - {job.company}
         <Link to={`/job/${job._id}`} className='btn margin-left'>
@@ -51,7 +51,7 @@ function JobEvents({ singleEvent, jobs }) {
           </span>
         </div>
       </div>
-    </>
+    </div>
   ) : (
     <div>Loading</div>
   );

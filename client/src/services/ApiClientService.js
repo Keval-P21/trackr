@@ -45,9 +45,9 @@ async function deleteJob(id) {
   }
 }
 
-async function getEvents() {
+async function getEvents(userId) {
   try {
-    let events = await fetch(`${baseUrl}/events`);
+    let events = await fetch(`${baseUrl}/events/${userId}`);
     return events.json();
   } catch (error) {
     console.log('GET request error', error);

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ApiClientService from '../../services/ApiClientService';
+import { useAuth } from '../context/AuthContext';
 
 function AddEventForm({ setEvents, events, getUserEvents }) {
+  const { currentUser } = useAuth();
   const [name, setName] = useState();
   const [description, setDescription] = useState();
   const [location, setLocation] = useState();
@@ -16,6 +18,7 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
     event.preventDefault();
     const data = {
       jobId: jobId.id,
+      userId: currentUser.uid,
       name,
       description,
       startDate,

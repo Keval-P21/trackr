@@ -1,8 +1,8 @@
 const EventModel = require('./eventSchema');
 
-const getAllEvents = async function () {
+const getAllEvents = async function (userId) {
   try {
-    return await EventModel.find();
+    return await EventModel.find(userId);
   } catch (error) {
     console.log('Error in getAllEvents:', error);
   }
