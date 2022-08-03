@@ -28,7 +28,7 @@ function App() {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [currentUser]);
   // });
 
   async function getUserJobs(userId) {

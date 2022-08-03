@@ -112,6 +112,15 @@ body {
   gap: 2rem;
 }
 
+.task-event-cont{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  /* outline: 3px solid green ; */
+  gap: 2rem;
+}
+
 .form-box {
   width: 100%;
   max-width: 800px;
