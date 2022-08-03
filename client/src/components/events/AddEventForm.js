@@ -27,9 +27,14 @@ function AddEventForm({ setEvents, events, getUserEvents }) {
       endTime,
       location,
     };
-    await ApiClientService.addEvent(data);
+    try {
+      await ApiClientService.addEvent(data, currentUser);
+    } catch (error) {
+      console.log(error);
+    }
     setEvents((prev) => [...prev, data]);
     event.target.reset();
+    getUserEvents(currentUser);
   }
 
   function handleStartDateChange(e) {

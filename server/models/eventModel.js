@@ -20,7 +20,7 @@ const deleteOneEvent = async function (_id) {
   try {
     return await EventModel.deleteOne({ _id: _id });
   } catch (error) {
-    console.log('Error in deleteOneEVent:', error);
+    console.log('Error in deleteOneEvent:', error);
   }
 };
 

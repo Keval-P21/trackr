@@ -13,11 +13,14 @@ async function getJobs(user) {
   }
 }
 
-async function addJob(data) {
+async function addJob(data, user) {
   try {
     await fetch(`${baseUrl}/jobs/${data.userId}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + user.accessToken,
+      },
       body: JSON.stringify(data),
     });
   } catch (error) {
@@ -65,11 +68,14 @@ async function getEvents(user) {
   }
 }
 
-async function addEvent(data) {
+async function addEvent(data, user) {
   try {
     await fetch(`${baseUrl}/events/${data.jobId}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + user.accessToken,
+      },
       body: JSON.stringify(data),
     });
   } catch (error) {
