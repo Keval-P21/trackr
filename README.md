@@ -23,4 +23,10 @@ Trackr is built with React on the Front End, NodeJs and ExpressJs for the Back E
 
 ## How to run Trackr
 
-Instructions coming soon...
+- clone the repository
+- create a firebase project (javascript), save your firebase details in the client/.env file
+- add a firebase service account (NodeJs) and save this file in the server/firbase-config folder as serviceAccount.json
+- start MongoDB and add the required variables to server/.env file
+- If you are using a specific port to run the server, make the required change to the baseUrl in client/serves/ApiClientService.js file
+- cd into the server folder and run `npm i`
+- cd into the client folder and run `npm start` and go to `http://localhost:3000/`
