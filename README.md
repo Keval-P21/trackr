@@ -18,8 +18,15 @@ Trackr is an easy to use web app built to help you track applications during the
   - Yahoo
 
 ## Technology Used
-
-Trackr is built with React on the Front End, NodeJs and ExpressJs for the Back End, MongoDB for the server and Firebase for the authentication.
+- Front End
+  - React
+  - Firebase
+- Back End
+  - Express.js
+  - Firebase
+ - Database
+  - MongoDB
+  - Mongoose
 
 ## How to run Trackr
 
@@ -30,3 +37,5 @@ Trackr is built with React on the Front End, NodeJs and ExpressJs for the Back E
 - If you are using a specific port to run the server, make the required change to the baseUrl in client/serves/ApiClientService.js file
 - cd into the server folder and run `npm i`
 - cd into the client folder and run `npm start` and go to `http://localhost:3000/`
+
+![trackr-dashboard-example](https://user-images.githubusercontent.com/98584935/182572447-b542ee41-ef61-42e6-ac8f-b8d8ffaa6fbc.png)
