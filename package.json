@@ -15,13 +15,5 @@
   "bugs": {
     "url": "https://github.com/Keval-P21/trackr/issues"
   },
-  "homepage": "https://github.com/Keval-P21/trackr#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "firebase-admin": "^11.0.1",
-    "mongoose": "^6.5.0",
-    "nodemon": "^2.0.19"
-  }
+  "homepage": "https://github.com/Keval-P21/trackr#readme"
 }

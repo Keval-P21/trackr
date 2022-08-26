@@ -6,38 +6,37 @@ const getJobs = async (req, res) => {
     res.status(200).send(jobs);
   } catch (error) {
     console.log('Error in getJobs', error);
-    res.status(500);
+    res.status(500).send(error);
   }
 };
 
 const createNewJob = async (req, res) => {
   try {
-    await jobModel.setOne(req.body);
-    res.status(201).send('ok');
+    const newJob = await jobModel.setOne(req.body);
+    res.status(201).send(newJob);
   } catch (error) {
     console.log('Error in createNewJob', error);
-    res.status(500);
+    res.status(500).send(error);
   }
 };
 
 const deleteJob = async (req, res) => {
   try {
-    await jobModel.deleteOne(req.params.id);
-    res.status(204).send('Deleted Job');
+    const deletedJob = await jobModel.deleteOne(req.params.id);
+    res.status(204).send(deletedJob);
   } catch (error) {
     console.log('Error in deleteJob', error);
-    res.status(500);
+    res.status(500).send(error);
   }
 };
 
 const updateJob = async (req, res) => {
   try {
-    const updated = await jobModel.updateOne(req.params.id, req.body);
-    // console.log(updated);
-    res.status(200).send(updated);
+    const updatedJob = await jobModel.updateOne(req.params.id, req.body);
+    res.status(200).send(updatedJob);
   } catch (error) {
     console.log('Error in updateJob', error);
-    res.status(500);
+    res.status(500).send(error);
   }
 };
 

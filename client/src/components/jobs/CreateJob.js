@@ -32,7 +32,11 @@ function CreateJob({ setJobs }) {
       date_added: new Date().toDateString(),
     };
 
-    await ApiClientService.addJob(data, currentUser);
+    try {
+      await ApiClientService.addJob(data, currentUser);
+    } catch (error) {
+      console.log(error);
+    }
     setJobs((prev) => [...prev, data]);
     event.target.reset();
     navigate('/');
@@ -40,7 +44,6 @@ function CreateJob({ setJobs }) {
 
   return (
     <div className='create-cont purple pad-around'>
-      {/* <div className='form-cont'> */}
       <form onSubmit={handleSubmit}>
         <h2 className='white-text slim'>Add New Job</h2>
 
@@ -141,7 +144,6 @@ function CreateJob({ setJobs }) {
           </button>
         </div>
       </form>
-      {/* </div> */}
     </div>
   );
 }
