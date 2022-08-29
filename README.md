@@ -1,6 +1,8 @@
 # Trackr
 
-## What is Trackr
+<p align="center">
+  <img src="./readme-images/trackr-readme-logo.png" />
+</p>
 
 Trackr is an easy to use web app built to help you track applications during the job seeking process.
 
@@ -17,25 +19,68 @@ Trackr is an easy to use web app built to help you track applications during the
   - Outlook
   - Yahoo
 
+## Screenshots
+
+<p align="center">
+  <img src="./readme-images/readme-screenshot-1.png" />
+</p>
+
+## Getting Started
+
+Except for the regular suspects; git, Node, npm, you need these things to work on the Trackr app. Follow the instructions supplied below them or on their links to get them up and running before you continue with _Installation_.
+
+- [Firebase](https://firebase.google.com)
+
+## Installation
+
+1. Clone this repo and enter!
+
+```bash
+  git clone https://github.com/Keval-P21/trackr.git
+  cd trackr
+```
+
+2. Install dependencies in both the client and server folders.
+
+```bash
+  cd client                 # ! Change into the client folder !
+  npm install
+```
+
+```bash
+  cd ../server              # ! Change into the server folder !
+  npm install
+```
+
+3. Setup the .env files (.env.example file are given in both the client and server folder)
+
+- create a Firebase project (JavaScript), save your Firebase details in the **client/.env** file
+- add a Firebase service account (NodeJs) and save this file in the **server/firebase-config** folder as **serviceAccount.json**
+- start MongoDB and add the required Port and Database name to **server/.env** file to connect to your database
+
+4. Run the server
+
+```bash
+  cd server                 # ! New terminal and change into the server folder !
+  npm start
+```
+
+5. Run the client
+
+```bash
+  cd client                 # ! New terminal and change into the client folder !
+  npm start
+```
+
 ## Technology Used
-- Front End
-  - React
-  - Firebase
-- Back End
-  - Express.js
-  - Firebase
- - Database
-  - MongoDB
-  - Mongoose
 
-## How to run Trackr
+- [React](https://reactjs.org/)
+- [NodeJs](https://nodejs.org/en/)
+- [Express.js](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [Firebase](https://firebase.google.com/)
+- [Mongoose](https://mongoosejs.com/)
 
-- clone the repository
-- create a firebase project (javascript), save your firebase details in the client/.env file
-- add a firebase service account (NodeJs) and save this file in the server/firbase-config folder as serviceAccount.json
-- start MongoDB and add the required variables to server/.env file
-- If you are using a specific port to run the server, make the required change to the baseUrl in client/serves/ApiClientService.js file
-- cd into the server folder and run `npm i`
-- cd into the client folder and run `npm start` and go to `http://localhost:3000/`
+## Author
 
-![trackr-dashboard-example](https://user-images.githubusercontent.com/98584935/182572447-b542ee41-ef61-42e6-ac8f-b8d8ffaa6fbc.png)
+Keval Patel - [Github](https://github.com/Keval-P21) - [LinkedIn](www.linkedin.com/in/keval-r-patel)
