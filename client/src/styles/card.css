@@ -119,6 +119,12 @@
 .pad-top{
   padding-top: 1rem;
 }
-
+.error{
+  background: red;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  margin: 7px 0;
+}
 
 

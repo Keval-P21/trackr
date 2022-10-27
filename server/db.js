@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
-const DB_PORT = process.env.DB_PORT;
-const DB_NAME = process.env.DB_NAME;
 
 const main = async () => {
   try {
-    await mongoose.connect(`mongodb://localhost:${DB_PORT}/${DB_NAME}`, {
+    await mongoose.connect(process.env.MONGO_DB_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

@@ -6,40 +6,37 @@ const getEvents = async (req, res) => {
     res.status(200).send(events);
   } catch (error) {
     console.log('Error in getEvents', error);
-    res.status(500).send(error);
+    res.status(500);
   }
 };
 
 const createNewEvent = async (req, res) => {
   try {
-    const newEvent = await eventModel.setOneEvent(req.body);
-    res.status(201).send(newEvent);
+    await eventModel.setOneEvent(req.body);
+    res.status(201).send('ok');
   } catch (error) {
     console.log('Error in createNewEvent', error);
-    res.status(500).send(error);
+    res.status(500);
   }
 };
 
 const deleteEvent = async (req, res) => {
   try {
-    const deletedEvent = await eventModel.deleteOneEvent(req.params.id);
-    res.status(204).send(deleteEvent);
+    await eventModel.deleteOneEvent(req.params.id);
+    res.status(204).send('Deleted Job');
   } catch (error) {
     console.log('Error in deleteEvent', error);
-    res.status(500).send(error);
+    res.status(500);
   }
 };
 
 const updateEvent = async (req, res) => {
   try {
-    const updatedEvent = await eventModel.updateOneEvents(
-      req.params.id,
-      req.body
-    );
-    res.status(200).send(updatedEvent);
+    const updated = await eventModel.updateOneEvent(req.params.id, req.body);
+    res.status(200).send(updated);
   } catch (error) {
     console.log('Error in updateEvent', error);
-    res.status(500).send(error);
+    res.status(500);
   }
 };
 
